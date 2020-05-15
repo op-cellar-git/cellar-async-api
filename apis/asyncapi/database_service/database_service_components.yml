@@ -1,4 +1,4 @@
-# datbase_service_components.yml
+# database_service_components.yml
 components:
   messages:
     IngestBegin:
