@@ -1,4 +1,4 @@
-# DatabaseService.yml
+# database_service.yml
 asyncapi: 2.0.0
 info:
   title: Database Service API
@@ -13,236 +13,52 @@ servers:
 
 channels:
   # how to integrate api versioning?
-  # receive
   sec/IngestBegin:
     publish:
       message: 
-        $ref: '#/components/messages/IngestBegin'
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/database_service/database_service_components.yml#/components/messages/IngestBegin'
   database/IngestEnd:
     subscribe:
       message:
-         $ref: '#/components/messages/IngestEnd'
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/database_service/database_service_components.yml#/components/messages/IngestEnd'
   database/IngestFail:
     subscribe:
       message:
-         $ref: '#/components/messages/IngestFail'
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/database_service/database_service_components.yml#/components/messages/IngestFail'
   sec/CompensateBegin:
     publish:
       message: 
-        $ref: '#/components/messages/CompensateBegin'
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/database_service/database_service_components.yml#/components/messages/CompensateBegin'
   validation/CompensateEnd:
     subscribe:
       message:
-         $ref: '#/components/messages/CompensateEnd'
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/database_service/database_service_components.yml#/components/messages/CompensateEnd'
   validation/CompensateFail:
     subscribe:
       message:
-         $ref: '#/components/messages/CompensateFail'
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/database_service/database_service_components.yml#/components/messages/CompensateFail'
   sec/SnapshotDbBegin:
     publish:
       message: 
-        $ref: '#/components/messages/SnapshotDbBegin'
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/database_service/database_service_components.yml#/components/messages/SnapshotDbBegin'
   validation/SnapshotDbEnd:
     subscribe:
       message:
-         $ref: '#/components/messages/SnapshotDbEnd'
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/database_service/database_service_components.yml#/components/messages/SnapshotDbEnd'
   validation/SnapshotDbFail:
     subscribe:
       message:
-         $ref: '#/components/messages/SnapshotDbFail'
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/database_service/database_service_components.yml#/components/messages/SnapshotDbFail'
   sec/CleanupBegin:
     publish:
       message: 
-        $ref: '#/components/messages/CleanupBegin'   
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/database_service/database_service_components.yml#/components/messages/CleanupBegin'   
   validation/CleanupEnd:
     subscribe:
       message:
-         $ref: '#/components/messages/CleanupEnd'
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/database_service/database_service_components.yml#/components/messages/CleanupEnd'
   validation/CleanupFail:
     subscribe:
       message:
-         $ref: '#/components/messages/CleanupFail'
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/database_service/database_service_components.yml#/components/messages/CleanupFail'
          
-components:
-  messages:
-    # begin
-    IngestBegin:
-      correlationId:
-        location: "$message.payload#/traceId"
-      #correlationId:
-      #  $ref: "#/components/correlationIds/traceIdCorrelator"
-      payload:
-        $ref: "#/components/schemas/IngestBeginPayloadSchema"
-    CompensateBegin:
-      correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
-      payload:
-        $ref: "#/components/schemas/CompensateBeginPayloadSchema" 
-    SnapshotDbBegin:
-      correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
-      payload:
-        $ref: "#/components/schemas/SnapshotDbBeginPayloadSchema"      
-    CleanupBegin:
-      correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
-      payload:
-        $ref: "#/components/schemas/CleanupBeginPayloadSchema"      
-    # end
-    IngestEnd:
-      correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
-      payload:
-        $ref: "#/components/schemas/IngestEndPayloadSchema"
-    CompensateEnd:
-      correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
-      payload:
-        $ref: "#/components/schemas/CompensateEndPayloadSchema" 
-    SnapshotDbEnd:
-      correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
-      payload:
-        $ref: "#/components/schemas/SnapshotDbEndPayloadSchema"      
-    CleanupEnd:
-      correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
-      payload:
-        $ref: "#/components/schemas/CleanupEndPayloadSchema"     
-    # fail
-    IngestFail:
-      correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
-      payload:
-        $ref: "#/components/schemas/IngestFailPayloadSchema"
-    CompensateFail:
-      correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
-      payload:
-        $ref: "#/components/schemas/CompensateFailPayloadSchema" 
-    SnapshotDbFail:
-      correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
-      payload:
-        $ref: "#/components/schemas/SnapshotDbFailPayloadSchema"      
-    CleanupFail:
-      correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
-      payload:
-        $ref: "#/components/schemas/CleanupFailPayloadSchema"              
-
-  schemas:
-    IngestBeginPayloadSchema:
-      type: object
-      properties:
-        traceId:
-          $ref: "#/components/schemas/traceIdSchema" 
-        db:
-          $ref: "#/components/schemas/dbSchema"
-        sharedAreaRef: 
-          $ref: "#/components/schemas/sharedAreaRefSchema"
-        join:
-          $ref: "#/components/schemas/joinSchema"
-      required:
-      - traceId
-      - db
-      - sharedAreaRef
-    IngestEndPayloadSchema:
-      type: object
-      properties:
-        traceId:
-          $ref: "#/components/schemas/traceIdSchema"
-      required:
-      - traceId
-    IngestFailPayloadSchema:
-      type: object
-      properties:
-        traceId:
-          $ref: "#/components/schemas/traceIdSchema"
-      required:
-      - traceId
-    CompensateBeginPayloadSchema:
-      type: object
-      properties:
-        traceId:
-          $ref: "#/components/schemas/traceIdSchema" 
-        db:
-          $ref: "#/components/schemas/dbSchema"
-        sharedAreaRef: 
-          $ref: "#/components/schemas/sharedAreaRefSchema"
-        join:
-          $ref: "#/components/schemas/joinSchema"
-      required:
-      - traceId
-      - db
-      - sharedAreaRef
-    CompensateEndPayloadSchema:
-      type: object
-      properties:
-        traceId:
-          $ref: "#/components/schemas/traceIdSchema"
-      required:
-      - traceId
-    CompensateFailPayloadSchema:
-      type: object
-      properties:
-        traceId:
-          $ref: "#/components/schemas/traceIdSchema"
-      required:
-      - traceId
-    SnapshotDbBeginPayloadSchema:
-      type: object
-      properties:
-        traceId:
-          $ref: "#/components/schemas/traceIdSchema"
-        sharedAreaRef: 
-          $ref: "#/components/schemas/sharedAreaRefSchema"
-    SnapshotDbEndPayloadSchema:
-      type: object
-      properties:
-       traceId:
-          $ref: "#/components/schemas/traceIdSchema"
-    SnapshotDbFailPayloadSchema:
-      type: object
-      properties:
-        traceId:
-          $ref: "#/components/schemas/traceIdSchema"
-    CleanupBeginPayloadSchema:
-      type: object
-      properties:
-        traceId:
-          $ref: "#/components/schemas/traceIdSchema"
-        sharedAreaRef: 
-          $ref: "#/components/schemas/sharedAreaRefSchema"
-    CleanupEndPayloadSchema:
-      type: object
-      properties:
-       traceId:
-          $ref: "#/components/schemas/traceIdSchema"
-    CleanupFailPayloadSchema:
-      type: object
-      properties:
-        traceId:
-          $ref: "#/components/schemas/traceIdSchema"
-    traceIdSchema:
-      type: string
-      description: A trace id to correlate messages of a Saga transaction.
-    sharedAreaRefSchema:
-      type: string
-      description: Reference to the SIP input package in the Shared Area. Services can access the input data from here but also store any kind of temporary data. 
-    dbSchema:
-     type: string
-     description: The affected database.
-     enum:
-     - s3
-     - es
-     - virtuoso
-     - rdbms
-    joinSchema:
-     type: boolean
-     description: Flag to indicate whether to perform a join. [TODO discuss concrete mechanism behind this]
-     default: false
-  correlationIds:
-    traceIdCorrelator:
-      description: Data from message payload used as correlation ID
-      location: $message.payload#/traceId

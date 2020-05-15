@@ -1,7 +1,6 @@
-# DatabaseServiceComponents.yml
+# datbase_service_components.yml
 components:
   messages:
-    # begin
     IngestBegin:
       correlationId:
         location: "$message.payload#/traceId"
