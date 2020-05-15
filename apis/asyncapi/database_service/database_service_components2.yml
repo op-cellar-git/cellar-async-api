@@ -1,0 +1,73 @@
+components:
+  messages:
+     ingestionEnd:
+       name: ingestionEnd
+       payload:
+          type: object
+       traits:
+          - $ref: "#/components/messageTraits/commonHeaders"
+     ingestionFail:
+       name: ingestionFail
+       payload:
+          type: object
+       traits:
+          - $ref: "#/components/messageTraits/commonHeaders"          
+     cleanupEnd:
+       name: cleanupEnd
+       payload:
+          type: object
+       traits:
+          - $ref: "#/components/messageTraits/commonHeaders"
+     cleanupBegin:
+       name: cleanupBegin
+       payload:
+          type: object
+       traits:
+          - $ref: "#/components/messageTraits/commonHeaders"
+     snapshotEnd:
+       name: snapshotEnd
+       payload:
+          type: object
+       traits:
+          - $ref: "#/components/messageTraits/commonHeaders"
+     snapshotBegin:
+       name: snapshotBegin
+       payload:
+          type: object
+       traits:
+          - $ref: "#/components/messageTraits/commonHeaders"
+     snapshotFail:
+       name: snapshotFail
+       payload:
+          type: object
+       traits:
+          - $ref: "#/components/messageTraits/commonHeaders"   
+     ingestionBegin:
+       name: ingestionBegin
+       payload:
+         type: object
+         properties:
+            database:
+              type: string
+              description: ID of the database to ingest.
+              enum:
+                - 'S3'
+                - 'ES'
+                - 'Virtuoso'
+       traits:
+          - $ref: "#/components/messageTraits/commonHeaders"
+  messageTraits:
+    commonHeaders:
+      headers:
+          type: object
+          properties:
+            sagaID:
+              description: Correlation ID set by application
+              type: string
+            parentID:
+              description: Unique identifier for a given instance of the publishing application
+              type: string
+            join:
+              type: boolean
+              description: Flag to indicate whether to perform a join.
+              default: false 
