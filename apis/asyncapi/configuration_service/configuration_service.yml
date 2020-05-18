@@ -27,7 +27,7 @@ channels:
   sec/CompensatePushToRepoBegin:
     publish:
       message: 
-        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/CompensateToRepoBegin'
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/CompensatePushToRepoBegin'
   configuration/CompensatePushToRepoEnd:
     publish:
       message: 
