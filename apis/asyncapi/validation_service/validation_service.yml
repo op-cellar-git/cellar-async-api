@@ -1,4 +1,4 @@
-# ValidationService.yml
+# validation_service.yml
 asyncapi: 2.0.0
 info:
   title: Validation Service API

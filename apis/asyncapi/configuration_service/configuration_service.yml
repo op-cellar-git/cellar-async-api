@@ -1,0 +1,64 @@
+# configuration_service.yml
+asyncapi: 2.0.0
+info:
+  title: Configuration Service API
+  version: '0.1'
+  description: Definition of the Configuration Service API
+servers:
+  production:
+    # the server is just a placeholder at the moment
+    url: broker.cellar.com
+    protocol: amqp
+    description: AsyncMessage Broker
+
+channels:
+  sec/PushToRepoBegin:
+    publish:
+      message: 
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/PushToRepoBegin'
+  configuration/PushToRepoEnd:
+    publish:
+      message: 
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/PushToRepoEnd'
+  configuration/PushToRepoFail:
+    publish:
+      message: 
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/PushToRepoFail'
+ sec/CompensatePushToRepoBegin:
+    publish:
+      message: 
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/CompensateToRepoBegin'
+  configuration/CompensatePushToRepoEnd:
+    publish:
+      message: 
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/CompensatePushToRepoEnd'
+  configuration/CompensatePushToRepoFail:
+    publish:
+      message: 
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/CompensatePushToRepoFail'
+ sec/InferCdmBegin:
+    publish:
+      message: 
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/InferCdmBegin'
+  configuration/InferCdmEnd:
+    publish:
+      message: 
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/InferCdmEnd'
+  configuration/InferCdmFail:
+    publish:
+      message: 
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/InferCdmFail'
+  sec/CdmToShaclBegin:
+    publish:
+      message: 
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/CdmToShaclBegin'
+  configuration/CdmToShaclEnd:
+    publish:
+      message: 
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/CdmToShaclEnd'
+  configuration/CdmToShaclFail:
+    publish:
+      message: 
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/CdmToShaclFail'
+
+  

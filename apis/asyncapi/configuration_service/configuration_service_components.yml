@@ -1,0 +1,170 @@
+# configuration_service_components.yml
+components:
+  messages:
+    PushToRepoBegin:
+      correlationId:
+        location: "$message.payload#/traceId"
+      #correlationId:
+      #  $ref: "#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/PushToRepoBeginPayloadSchema"
+    PushToRepoEnd:
+      correlationId:
+        $ref: "#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/PushToRepoEndPayloadSchema" 
+    PushToRepoFail:
+      correlationId:
+        $ref: "#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/PushToRepoFailPayloadSchema"      
+    
+    CompensatePushToRepoBegin:
+      correlationId:
+        $ref: "#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/CompensatePushToRepoBeginPayloadSchema"      
+    CompensatePushToRepoEnd:
+      correlationId:
+        $ref: "#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/CompensatePushToRepoEndPayloadSchema"
+    CompensatePushToRepoFail:
+      correlationId:
+        $ref: "#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/CompensatePushToRepoFailPayloadSchema" 
+    
+    InferCdmBegin:
+      correlationId:
+        $ref: "#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/InferCdmBeginPayloadSchema"      
+    InferCdmEnd:
+      correlationId:
+        $ref: "#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/InferCdmEndPayloadSchema"     
+
+    InferCdmFail:
+      correlationId:
+        $ref: "#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/InferCdmFailPayloadSchema"
+    
+    CdmToShaclBegin:
+      correlationId:
+        $ref: "#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/CdmToShaclBeginPayloadSchema" 
+    CdmToShaclEnd:
+      correlationId:
+        $ref: "#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/CdmToShaclEndPayloadSchema"      
+    CdmToShaclFail:
+      correlationId:
+        $ref: "#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/CdmToShaclFailPayloadSchema"              
+
+  schemas:
+    PushToRepoBeginPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "#/components/schemas/traceIdSchema" 
+      required:
+      - traceId
+    PushToRepoEndPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "#/components/schemas/traceIdSchema" 
+      required:
+      - traceId
+    PushToRepoFailPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "#/components/schemas/traceIdSchema" 
+      required:
+      - traceId
+
+
+    CompensatePushToRepoBeginPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "#/components/schemas/traceIdSchema" 
+      required:
+      - traceId
+    CompensatePushToRepoEndPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "#/components/schemas/traceIdSchema" 
+      required:
+      - traceId
+    CompensatePushToRepoFailPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "#/components/schemas/traceIdSchema" 
+      required:
+      - traceId
+          
+    InferCdmBeginPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "#/components/schemas/traceIdSchema"
+      required:
+      - traceId
+    InferCdmEndPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "#/components/schemas/traceIdSchema"
+      required:
+      - traceId
+    InferCdmFailPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "#/components/schemas/traceIdSchema"
+      required:
+      - traceId
+
+    CdmToShaclBeginPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "#/components/schemas/traceIdSchema"
+      required:
+      - traceId
+    CdmToShaclEndPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "#/components/schemas/traceIdSchema"
+      required:
+      - traceId
+    CdmToShaclFailPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "#/components/schemas/traceIdSchema"
+      required:
+      - traceId
+
+    traceIdSchema:
+      type: string
+      description: A trace id to correlate messages of a Saga transaction.
+    sharedAreaRefSchema:
+      type: string
+      description: Reference to the SIP input package in the Shared Area. Services can access the input data from here but also store any kind of temporary data. 
+  correlationIds:
+    traceIdCorrelator:
+      description: Data from message payload used as correlation ID
+      location: $message.payload#/traceId
