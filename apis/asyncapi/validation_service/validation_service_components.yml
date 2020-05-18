@@ -1,0 +1,86 @@
+components:
+  messages:
+    # begin
+    PrelockValidationBegin:
+      correlationId:
+        $ref: "#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/PrelockValidationBeginPayloadSchema"
+    PostlockValidationBegin:
+      correlationId:
+        $ref: "#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/PostlockValidationBeginPayloadSchema"     
+    # end
+    PrelockValidationEnd:
+      correlationId:
+        $ref: "#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/PrelockValidationEndPayloadSchema"
+    PostlockValidationEnd:
+      correlationId:
+        $ref: "#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/PostlockValidationEndPayloadSchema"   
+    # fail
+    PrelockValidationFail:
+      correlationId:
+        $ref: "#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/PrelockValidationFailPayloadSchema"
+    PostlockValidationFail:
+      correlationId:
+        $ref: "#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/PostlockValidationFailPayloadSchema"           
+
+  schemas:
+    PrelockValidationBeginPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "#/components/schemas/traceIdSchema"
+        sharedAreaRef: 
+          $ref: "#/components/schemas/sharedAreaRefSchema"
+    PrelockValidationEndPayloadSchema:
+      type: object
+      properties:
+       traceId:
+          $ref: "#/components/schemas/traceIdSchema"
+    PrelockValidationFailPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "#/components/schemas/traceIdSchema"
+          
+    
+    PostlockValidationBeginPayloadSchema:
+      type: object
+      properties:
+        # there seems to be built-in support in asyncapi for correlationIds. 
+        # see https://www.asyncapi.com/docs/specifications/2.0.0/#correlationIdObject
+        traceId:
+          $ref: "#/components/schemas/traceIdSchema"
+        sharedAreaRef: 
+          $ref: "#/components/schemas/sharedAreaRefSchema"
+    PostlockValidationEndPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "#/components/schemas/traceIdSchema"
+    PostlockValidationFailPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "#/components/schemas/traceIdSchema"
+    traceIdSchema:
+      type: string
+      description: A trace id to correlate messages of a Saga transaction
+    sharedAreaRefSchema:
+      type: string
+      description: Reference to the SIP input package
+
+  correlationIds:
+    traceIdCorrelator:
+      description: Data from message payload used as correlation ID
+      location: $message.payload#/traceId
