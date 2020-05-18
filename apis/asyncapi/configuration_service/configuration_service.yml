@@ -24,7 +24,7 @@ channels:
     publish:
       message: 
         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/PushToRepoFail'
- sec/CompensatePushToRepoBegin:
+  sec/CompensatePushToRepoBegin:
     publish:
       message: 
         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/CompensateToRepoBegin'
@@ -36,7 +36,7 @@ channels:
     publish:
       message: 
         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/CompensatePushToRepoFail'
- sec/InferCdmBegin:
+  sec/InferCdmBegin:
     publish:
       message: 
         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/InferCdmBegin'
