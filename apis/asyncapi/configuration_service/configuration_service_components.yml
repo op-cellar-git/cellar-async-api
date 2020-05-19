@@ -2,6 +2,7 @@
 components:
   messages:
     PushToRepoBegin:
+      description: The SEC sends this message to push the artifacts to the configuration repository.
       correlationId:
         $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
