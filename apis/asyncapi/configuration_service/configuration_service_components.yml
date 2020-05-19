@@ -8,60 +8,70 @@ components:
       payload:
         $ref: "#/components/schemas/PushToRepoBeginPayloadSchema"
     PushToRepoEnd:
+      description: The Configuration Service confirms that it succeeded to push the artifacts to the configuration repository.
       correlationId:
         $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/PushToRepoEndPayloadSchema" 
     PushToRepoFail:
+      description: The Configuration Service failed to push the artifacts to the configuration repository.
       correlationId:
         $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/PushToRepoFailPayloadSchema"      
     
     CompensatePushToRepoBegin:
+      description: The SEC sends this message to compensate the push of an artifact to the configuration repository.
       correlationId:
         $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/CompensatePushToRepoBeginPayloadSchema"      
     CompensatePushToRepoEnd:
+      description: The Configuration Service confirms that it succeeded to compensate the push of an artifact to the configuration repository.
       correlationId:
         $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/CompensatePushToRepoEndPayloadSchema"
     CompensatePushToRepoFail:
+      description: The Configuration Service indicates that it failed to compensate the push of an artifact to the configuration repository.
       correlationId:
         $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/CompensatePushToRepoFailPayloadSchema" 
     
     InferCdmBegin:
+      description: The SEC sends this message to infer the CDM.
       correlationId:
         $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/InferCdmBeginPayloadSchema"      
     InferCdmEnd:
+      description: The Configuration Service confirms that it succeeds.
       correlationId:
         $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/InferCdmEndPayloadSchema"     
-
     InferCdmFail:
+      description: The Configuration Service indicates that it failed to infer the CDM ontology.
       correlationId:
         $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/InferCdmFailPayloadSchema"
     
     CdmToShaclBegin:
+      description: The SEC sends this message to get the SHACL shapes from the current version of the CDM.
       correlationId:
         $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/CdmToShaclBeginPayloadSchema" 
     CdmToShaclEnd:
+      description: The Configuration Service confirms that it succeeded to generate the SHACL shapes.
       correlationId:
         $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/CdmToShaclEndPayloadSchema"      
     CdmToShaclFail:
+      description: The Configuration Service indicates that it failed to generate the new SHACL shapes.
       correlationId:
         $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
