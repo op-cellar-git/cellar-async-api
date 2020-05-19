@@ -174,7 +174,7 @@ components:
       properties:
         traceId:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema"
-         sharedAreaRef: 
+        sharedAreaRef: 
           description: "By processing the *.mets.xml, the Configuration Service determines the location of the NAL files."
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
       required:
