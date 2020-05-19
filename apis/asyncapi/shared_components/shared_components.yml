@@ -6,7 +6,7 @@ components:
         description: A trace id to correlate messages of a Saga transaction.
       sharedAreaRefSchema:
         type: string
-        description: Reference to the SIP input package in the Shared Area. Services can access the input data from here but also store any kind of temporary data. 
+        summary: Reference to the SIP input package in the Shared Area. Services can access the input data from here but also store any kind of temporary data. 
     correlationIds:
       traceIdCorrelator:
         description: Data from message payload used as correlation ID
