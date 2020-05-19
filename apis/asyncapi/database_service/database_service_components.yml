@@ -1,4 +1,4 @@
-# database_service_components.yml
+# validation_service_components.yml
 components:
   messages:
     IngestBegin:

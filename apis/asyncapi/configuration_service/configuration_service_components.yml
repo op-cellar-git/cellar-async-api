@@ -57,6 +57,26 @@ components:
         $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/InferCdmFailPayloadSchema"
+
+    InferSkosBegin:
+      description: The SEC sends this message to infer the authority table.
+      correlationId:
+        $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/InferSkosBeginPayloadSchema"      
+    InferSkosEnd:
+      description: The Configuration Service confirms that it succeeded to infer the authority table.
+      correlationId:
+        $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/InferSkosEndPayloadSchema"     
+    InferSkosFail:
+      description: The Configuration Service indicates that it failed to infer the authority table.
+      correlationId:
+        $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/InferSkosFailPayloadSchema"
+
     
     CdmToShaclBegin:
       description: The SEC sends this message to get the SHACL shapes from the current version of the CDM.
@@ -122,7 +142,7 @@ components:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
       required:
       - traceId
-          
+
     InferCdmBeginPayloadSchema:
       type: object
       properties:
@@ -138,6 +158,28 @@ components:
       required:
       - traceId
     InferCdmFailPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema"
+      required:
+      - traceId
+
+    InferSkosBeginPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema"
+      required:
+      - traceId
+    InferSkosEndPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema"
+      required:
+      - traceId
+    InferSkosFailPayloadSchema:
       type: object
       properties:
         traceId:
