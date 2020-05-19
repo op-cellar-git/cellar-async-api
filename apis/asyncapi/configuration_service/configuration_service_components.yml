@@ -103,8 +103,11 @@ components:
       properties:
         traceId:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
+        sharedAreaRef: 
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
       required:
       - traceId
+      - sharedAreaRef
     PushToRepoEndPayloadSchema:
       type: object
       properties:
@@ -126,8 +129,11 @@ components:
       properties:
         traceId:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
+        sharedAreaRef: 
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
       required:
       - traceId
+      - sharedAreaRef
     CompensatePushToRepoEndPayloadSchema:
       type: object
       properties:
