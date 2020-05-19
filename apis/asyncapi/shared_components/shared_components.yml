@@ -4,6 +4,7 @@ components:
       traceIdSchema:
         type: string
         description: A trace id to correlate messages of a Saga transaction.
+        example: "7a7cd594-5dce-4e61-93a7-d8b1df39bd09"
       sharedAreaRefSchema:
         type: string
         summary: Reference to the SIP input package in the Shared Area. Services can access the input data from here but also store any kind of temporary data. 
