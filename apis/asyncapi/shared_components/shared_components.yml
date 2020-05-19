@@ -7,7 +7,7 @@ components:
         example: "7a7cd594-5dce-4e61-93a7-d8b1df39bd09"
       sharedAreaRefSchema:
         type: string
-        description: Reference to the SIP input package in the Shared Area. Services can access the input data from here but also store any kind of temporary data. Generally, a reference to the shared area is sufficient for the execution of a task. Each service implements internal rules based on which it derives where in the shared area a specific piece of information can be found, e.g., fixed folder names for various tasks. 
+        description: Reference to the SIP input package in the Shared Area. Services can access the input data from here but also store any kind of temporary data. Generally, a reference to the shared area is sufficient for the execution of a task. Services implement internal rules based on which they derive from where in the Shared Area a specific piece of information can be retrieved, e.g., by using fixed folder names for different tasks. 
         example: "https://s3.amazonaws.com/cellar-transaction-bucket/publications_europa_eu_resource_pegase_20180927_top_level_event_1_94b9a53b-a982-4c94-bb1e-536acbd4268c "
     correlationIds:
       traceIdCorrelator:
