@@ -3,11 +3,11 @@ components:
     schemas:
       traceIdSchema:
         type: string
-        summary: A trace id to correlate messages of a Saga transaction.
+        description: A trace id to correlate messages of a Saga transaction.
         example: "7a7cd594-5dce-4e61-93a7-d8b1df39bd09"
       sharedAreaRefSchema:
         type: string
-        summary: Reference to the SIP input package in the Shared Area. Services can access the input data from here but also store any kind of temporary data. 
+        description: Reference to the SIP input package in the Shared Area. Services can access the input data from here but also store any kind of temporary data. 
         example: "https://s3.amazonaws.com/cellar-transaction-bucket/publications_europa_eu_resource_pegase_20180927_top_level_event_1_94b9a53b-a982-4c94-bb1e-536acbd4268c "
     correlationIds:
       traceIdCorrelator:
