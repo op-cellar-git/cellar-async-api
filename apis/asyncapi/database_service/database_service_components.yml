@@ -3,66 +3,66 @@ components:
   messages:
     IngestBegin:
       correlationId:
-        location: "$message.payload#/traceId"
+        $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       #correlationId:
       #  $ref: "#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/IngestBeginPayloadSchema"
     CompensateBegin:
       correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
+       $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/CompensateBeginPayloadSchema" 
     SnapshotDbBegin:
       correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
+        $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/SnapshotDbBeginPayloadSchema"      
     CleanupBegin:
       correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
+        $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/CleanupBeginPayloadSchema"      
     # end
     IngestEnd:
       correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
+        $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/IngestEndPayloadSchema"
     CompensateEnd:
       correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
+       $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/CompensateEndPayloadSchema" 
     SnapshotDbEnd:
       correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
+        $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/SnapshotDbEndPayloadSchema"      
     CleanupEnd:
       correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
+       $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/CleanupEndPayloadSchema"     
     # fail
     IngestFail:
       correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
+        $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/IngestFailPayloadSchema"
     CompensateFail:
       correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
+        $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/CompensateFailPayloadSchema" 
     SnapshotDbFail:
       correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
+        $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/SnapshotDbFailPayloadSchema"      
     CleanupFail:
       correlationId:
-        $ref: "#/components/correlationIds/traceIdCorrelator"
+        $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/CleanupFailPayloadSchema"              
 
@@ -71,13 +71,11 @@ components:
       type: object
       properties:
         traceId:
-          $ref: "#/components/schemas/traceIdSchema" 
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
         db:
           $ref: "#/components/schemas/dbSchema"
         sharedAreaRef: 
-          $ref: "#/components/schemas/sharedAreaRefSchema"
-        join:
-          $ref: "#/components/schemas/joinSchema"
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
       required:
       - traceId
       - db
@@ -86,27 +84,25 @@ components:
       type: object
       properties:
         traceId:
-          $ref: "#/components/schemas/traceIdSchema"
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
       required:
       - traceId
     IngestFailPayloadSchema:
       type: object
       properties:
         traceId:
-          $ref: "#/components/schemas/traceIdSchema"
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
       required:
       - traceId
     CompensateBeginPayloadSchema:
       type: object
       properties:
         traceId:
-          $ref: "#/components/schemas/traceIdSchema" 
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
         db:
           $ref: "#/components/schemas/dbSchema"
         sharedAreaRef: 
-          $ref: "#/components/schemas/sharedAreaRefSchema"
-        join:
-          $ref: "#/components/schemas/joinSchema"
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
       required:
       - traceId
       - db
@@ -115,56 +111,53 @@ components:
       type: object
       properties:
         traceId:
-          $ref: "#/components/schemas/traceIdSchema"
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
       required:
       - traceId
     CompensateFailPayloadSchema:
       type: object
       properties:
         traceId:
-          $ref: "#/components/schemas/traceIdSchema"
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
       required:
       - traceId
     SnapshotDbBeginPayloadSchema:
       type: object
       properties:
         traceId:
-          $ref: "#/components/schemas/traceIdSchema"
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
         sharedAreaRef: 
-          $ref: "#/components/schemas/sharedAreaRefSchema"
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
+
     SnapshotDbEndPayloadSchema:
       type: object
       properties:
        traceId:
-          $ref: "#/components/schemas/traceIdSchema"
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
     SnapshotDbFailPayloadSchema:
       type: object
       properties:
         traceId:
-          $ref: "#/components/schemas/traceIdSchema"
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
     CleanupBeginPayloadSchema:
       type: object
       properties:
         traceId:
-          $ref: "#/components/schemas/traceIdSchema"
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
         sharedAreaRef: 
-          $ref: "#/components/schemas/sharedAreaRefSchema"
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
+
     CleanupEndPayloadSchema:
       type: object
       properties:
        traceId:
-          $ref: "#/components/schemas/traceIdSchema"
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
     CleanupFailPayloadSchema:
       type: object
       properties:
         traceId:
-          $ref: "#/components/schemas/traceIdSchema"
-    traceIdSchema:
-      type: string
-      description: A trace id to correlate messages of a Saga transaction.
-    sharedAreaRefSchema:
-      type: string
-      description: Reference to the SIP input package in the Shared Area. Services can access the input data from here but also store any kind of temporary data. 
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
+
     dbSchema:
      type: string
      description: The affected database.
@@ -173,11 +166,3 @@ components:
      - es
      - virtuoso
      - rdbms
-    joinSchema:
-     type: boolean
-     description: Flag to indicate whether to perform a join. [TODO discuss concrete mechanism behind this]
-     default: false
-  correlationIds:
-    traceIdCorrelator:
-      description: Data from message payload used as correlation ID
-      location: $message.payload#/traceId
