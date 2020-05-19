@@ -48,6 +48,18 @@ channels:
     publish:
       message: 
         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/InferCdmFail'
+   sec/InferSkosBegin:
+    publish:
+      message: 
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/InferCdmBegin'
+  configuration/InferSkosEnd:
+    publish:
+      message: 
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/InferCdmEnd'
+  configuration/InferSkosFail:
+    publish:
+      message: 
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/configuration_service/configuration_service_components.yml#/components/messages/InferCdmFail'
   sec/CdmToShaclBegin:
     publish:
       message: 
