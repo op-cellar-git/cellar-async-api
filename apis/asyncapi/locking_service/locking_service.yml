@@ -15,28 +15,28 @@ channels:
   sec/LockBegin:
     publish:
       message: 
-        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/locking_service/locking_service_components.yml#/components/messages/PrelockValidationBegin'
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/locking_service/locking_service_components.yml#/components/messages/LockBegin'
   locking/LockEnd:
     subscribe:
       message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/locking_service/locking_service_components.yml#/components/messages/PrelockValidationEnd'
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/locking_service/locking_service_components.yml#/components/messages/LockEnd'
   locking/LockFail:
     subscribe:
       message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/locking_service/locking_service_components.yml#/components/messages/PostlockValidationFail'
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/locking_service/locking_service_components.yml#/components/messages/LockFail'
 
   sec/UnlockBegin:
     publish:
       message: 
-        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/locking_service/locking_service_components.yml#/components/messages/PrelockValidationBegin'
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/locking_service/locking_service_components.yml#/components/messages/UnlockBegin'
   locking/UnlockEnd:
     subscribe:
       message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/locking_service/locking_service_components.yml#/components/messages/PrelockValidationEnd'
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/locking_service/locking_service_components.yml#/components/messages/UnlockEnd'
   locking/UnlockFail:
     subscribe:
       message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/locking_service/locking_service_components.yml#/components/messages/PostlockValidationFail'
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/locking_service/locking_service_components.yml#/components/messages/UnlockFail'
   
   
   
