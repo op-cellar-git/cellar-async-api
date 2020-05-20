@@ -103,11 +103,11 @@ components:
       properties:
         traceId:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
-        sharedAreaRef: 
-          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
+        #sharedAreaRef: 
+        #  $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
       required:
       - traceId
-      - sharedAreaRef
+      #- sharedAreaRef
     PushToRepoEndPayloadSchema:
       type: object
       properties:
@@ -129,11 +129,11 @@ components:
       properties:
         traceId:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
-        sharedAreaRef: 
-          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
+        #sharedAreaRef: 
+        #  $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
       required:
       - traceId
-      - sharedAreaRef
+      #- sharedAreaRef
     CompensatePushToRepoEndPayloadSchema:
       type: object
       properties:
@@ -154,12 +154,12 @@ components:
       properties:
         traceId:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema"
-        sharedAreaRef: 
+        #sharedAreaRef: 
           #description: "By processing the *.mets.xml, the Configuration Service determines the CDM files."
-          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
+          #$ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
       required:
       - traceId
-      - sharedAreaRef
+      #- sharedAreaRef
     InferCdmEndPayloadSchema:
       type: object
       properties:
@@ -180,12 +180,12 @@ components:
       properties:
         traceId:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema"
-        sharedAreaRef: 
+        #sharedAreaRef: 
           #description: "By processing the *.mets.xml, the Configuration Service determines the location of the NAL files."
-          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
+          #$ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
       required:
       - traceId
-      - sharedAreaRef
+      #- sharedAreaRef
     InferSkosEndPayloadSchema:
       type: object
       properties:
@@ -206,12 +206,12 @@ components:
       properties:
         traceId:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema"
-        sharedAreaRef: 
+        #sharedAreaRef: 
           #description: "By processing the *.mets.xml, the Configuration Service determines the location of the NAL files."
-          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
+          #$ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
       required:
       - traceId
-      - sharedAreaRef
+      #- sharedAreaRef
     CdmToShaclEndPayloadSchema:
       type: object
       properties:

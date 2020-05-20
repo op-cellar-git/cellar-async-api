@@ -21,7 +21,6 @@ components:
         $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
       payload:
         $ref: "#/components/schemas/PostlockValidationEndPayloadSchema"   
-    # fail
     PrelockValidationFail:
       correlationId:
         $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
@@ -41,16 +40,23 @@ components:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
         #sharedAreaRef: 
         #  $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
+      required:
+      - traceId
     PrelockValidationEndPayloadSchema:
       type: object
       properties:
         traceId:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
+      required:
+      - traceId
     PrelockValidationFailPayloadSchema:
       type: object
       properties:
         traceId:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
+      required:
+      - traceId
+    
     PostlockValidationBeginPayloadSchema:
       type: object
       properties:
@@ -60,13 +66,19 @@ components:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
         #sharedAreaRef: 
         #  $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
+      required:
+      - traceId
     PostlockValidationEndPayloadSchema:
       type: object
       properties:
         traceId:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
+      required:
+      - traceId
     PostlockValidationFailPayloadSchema:
       type: object
       properties:
         traceId:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
+      required:
+      - traceId

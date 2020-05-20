@@ -74,8 +74,8 @@ components:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
         db:
           $ref: "#/components/schemas/dbSchema"
-        sharedAreaRef: 
-          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
+        #sharedAreaRef: 
+        #  $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
       required:
       - traceId
       - db
@@ -94,6 +94,7 @@ components:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
       required:
       - traceId
+    
     CompensateBeginPayloadSchema:
       type: object
       properties:
@@ -101,8 +102,8 @@ components:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
         db:
           $ref: "#/components/schemas/dbSchema"
-        sharedAreaRef: 
-          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
+        #sharedAreaRef: 
+        #  $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
       required:
       - traceId
       - db
@@ -121,14 +122,14 @@ components:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
       required:
       - traceId
+    
     SnapshotDbBeginPayloadSchema:
       type: object
       properties:
         traceId:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
-        sharedAreaRef: 
-          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
-
+        #sharedAreaRef: 
+        #  $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
     SnapshotDbEndPayloadSchema:
       type: object
       properties:
@@ -139,14 +140,14 @@ components:
       properties:
         traceId:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
+    
     CleanupBeginPayloadSchema:
       type: object
       properties:
         traceId:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
-        sharedAreaRef: 
-          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
-
+        #sharedAreaRef: 
+        #  $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
     CleanupEndPayloadSchema:
       type: object
       properties:
