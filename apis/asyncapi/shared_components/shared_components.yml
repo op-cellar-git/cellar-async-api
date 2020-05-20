@@ -4,7 +4,7 @@ components:
       traceIdSchema:
         type: string
         description: A trace id to correlate messages of a Saga transaction. The parameter also serves as a reference to a location in the Shared Area where all the data relevant for the current transaction is stored. Service maintain their own subarea in that location.
-        example: "7a7cd594-5dce-4e61-93a7-d8b1df39bd09 -> https://s3.amazonaws.com/cellar-transaction-bucket/p7a7cd594-5dce-4e61-93a7-d8b1df39bd09"
+        example: "7a7cd594-5dce-4e61-93a7-d8b1df39bd09"
       sharedAreaRefSchema:
         type: string
         description: Reference to the Shared Area where all the data that is relevant for the current transaction is needed. Services can access the input data from here but also store any kind of temporary data. Generally, a reference to the shared area is sufficient for the execution of a task. Services implement internal rules based on which they derive from where in the Shared Area a specific piece of information can be retrieved, e.g., by using fixed folder names for different tasks. 
