@@ -1,0 +1,42 @@
+# locking_service.yml
+asyncapi: 2.0.0
+info:
+  title: Locking Service API
+  version: '0.1'
+  description: Definition of the Locking Service API
+servers:
+  production:
+    # the server is just a placeholder at the moment
+    url: broker.cellar.com
+    protocol: amqp
+    description: AsyncMessage Broker
+
+channels:
+  sec/LockBegin:
+    publish:
+      message: 
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/locking_service/locking_service_components.yml#/components/messages/PrelockValidationBegin'
+  locking/LockEnd:
+    subscribe:
+      message:
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/locking_service/locking_service_components.yml#/components/messages/PrelockValidationEnd'
+  locking/LockFail:
+    subscribe:
+      message:
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/locking_service/locking_service_components.yml#/components/messages/PostlockValidationFail'
+
+  sec/UnlockBegin:
+    publish:
+      message: 
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/locking_service/locking_service_components.yml#/components/messages/PrelockValidationBegin'
+  locking/UnlockEnd:
+    subscribe:
+      message:
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/locking_service/locking_service_components.yml#/components/messages/PrelockValidationEnd'
+  locking/UnlockFail:
+    subscribe:
+      message:
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/locking_service/locking_service_components.yml#/components/messages/PostlockValidationFail'
+  
+  
+  

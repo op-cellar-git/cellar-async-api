@@ -1,0 +1,83 @@
+# validation_service_components.yml
+components:
+  messages:
+    LockBegin:
+      correlationId:
+        $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/LockBeginPayloadSchema"
+    LockEnd:
+      correlationId:
+        $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/LockEndPayloadSchema"     
+    LockFail:
+      correlationId:
+        $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/LockFailPayloadSchema"
+
+    UnlockBegin:
+      correlationId:
+        $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/UnlockBeginPayloadSchema"
+    UnlockEnd:
+      correlationId:
+        $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/UnlockEndPayloadSchema"     
+    UnlockFail:
+      correlationId:
+        $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/correlationIds/traceIdCorrelator"
+      payload:
+        $ref: "#/components/schemas/UnlockFailPayloadSchema"
+    
+  schemas:
+    LockBeginPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
+        #sharedAreaRef: 
+        #  $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
+      required:
+      - traceId
+    LockEndPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
+      required:
+      - traceId
+    LockFailPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
+      required:
+      - traceId
+    
+    UnlockBeginPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
+        #sharedAreaRef: 
+        #  $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
+      required:
+      - traceId
+    UnlockEndPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
+      required:
+      - traceId
+    UnlockFailPayloadSchema:
+      type: object
+      properties:
+        traceId:
+          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
+      required:
+      - traceId
