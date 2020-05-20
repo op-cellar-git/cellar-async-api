@@ -1,0 +1,23 @@
+components:
+  messages:
+     genericMessage:
+       name: genericMessage
+       payload:
+          type: object
+       traits:
+          - $ref: "#/components/messageTraits/commonHeaders"
+  messageTraits:
+    commonHeaders:
+      headers:
+          type: object
+          properties:
+            sagaID:
+              description: Correlation ID set by application
+              type: string
+            parentID:
+              description: Unique identifier for a given instance of the publishing application
+              type: string
+            join:
+              type: boolean
+              description: Flag to indicate whether to perform a join.
+              default: false 
