@@ -6,6 +6,20 @@ components:
           type: object
        traits:
           - $ref: "#/components/messageTraits/commonHeaders"
+     ingestionBegin:
+       name: ingestionBegin
+       payload:
+         type: object
+         properties:
+            database:
+              type: string
+              description: ID of the database to ingest.
+              enum:
+                - 'S3'
+                - 'ES'
+                - 'Virtuoso'
+       traits:
+          - $ref: "#/components/messageTraits/commonHeaders"
   messageTraits:
     commonHeaders:
       headers:
@@ -17,3 +31,7 @@ components:
             parentID:
               description: Unique identifier for a given instance of the publishing application
               type: string
+            join:
+              type: boolean
+              description: Flag to indicate whether to perform a join.
+              default: false 
