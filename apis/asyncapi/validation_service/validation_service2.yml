@@ -1,0 +1,23 @@
+asyncapi: 2.0.0
+info:
+  title: Validation Service API
+  version: '0.1'
+  description: Definition of the Validation Service API
+
+channels:
+  sec/PrelockValidationBegin:
+    publish:
+      message:
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
+  sec/PostlockValidationBegin:
+    publish:
+      message:
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
+  end:
+    subscribe:
+      message:
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
+  fail:
+    subscribe:
+      message:
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
