@@ -9,35 +9,19 @@ channels:
     publish:
       message:
          $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
-  indexation/DirectIndexationEnd:
-    subscribe:
-      message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
-  indexation/DirectIndexationFail:
-    subscribe:
-      message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
   sec/DependencyIndexationBegin:
     publish:
-      message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
-  indexation/DependencyIndexationEnd:
-    subscribe:
-      message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
-  indexation/DependencyIndexationFail:
-    subscribe:
       message:
          $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
   sec/SCBDInfBegin:
     publish:
       message:
          $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
-  indexation/SCBDInfEnd:
+  end:
     subscribe:
       message:
          $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
-  indexation/SCBDInfFail:
+  fail:
     subscribe:
       message:
          $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
