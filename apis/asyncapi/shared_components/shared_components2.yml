@@ -6,6 +6,13 @@ components:
           type: object
        traits:
           - $ref: "#/components/messageTraits/commonHeaders"
+     rdfResponse:
+       name: rdfResponse
+       contentType: application/turtle
+       payload:
+          type: object
+       traits:
+          - $ref: "#/components/messageTraits/commonHeaders"
      rdfRequest:
        name: rdfRequest
        payload:
