@@ -6,6 +6,40 @@ components:
           type: object
        traits:
           - $ref: "#/components/messageTraits/commonHeaders"
+     rdfRequest:
+       name: rdfRequest
+       payload:
+         type: object
+         properties:
+            objectType:
+              type: string
+              description: type of resource requested.
+              enum:
+                - 'object'
+                - 'tree'
+                - 'branch'
+            scope:
+              type: string
+              description: type of description requested.
+              enum:
+                - 'cbd'
+                - 'scbd'
+            inference:
+              type: string
+              description: type of inference requested.
+              enum:
+                - 'inferred'
+                - 'noninferred'
+            format:
+              type: string
+              description: type of exchange format requested.
+              enum:
+                - 'rdf'
+                - 'jsonld'
+                - 'ttl'
+                - 'nt'
+       traits:
+          - $ref: "#/components/messageTraits/commonHeaders"
      ingestionBegin:
        name: ingestionBegin
        payload:
