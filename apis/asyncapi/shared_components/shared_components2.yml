@@ -63,7 +63,7 @@ components:
           - $ref: "#/components/messageTraits/commonHeaders"
   messageTraits:
     commonHeaders:
-      headers:
+      payload:
           type: object
           properties:
             sagaID:
