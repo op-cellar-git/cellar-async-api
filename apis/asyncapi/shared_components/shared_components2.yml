@@ -66,6 +66,39 @@ components:
                 - 'nt'
        traits:
           - $ref: "#/components/messageTraits/commonHeaders"
+     rdfConceptRequest:
+       name: rdfRequest
+       payload:
+         type: object
+         properties:
+            table:
+              type: string
+              description: name of the table, e.g., corporate-body, eurovoc, etc.
+            conceptCode:
+              type: string
+              description: code from the table, e.g., COM, 42, etc.
+            scope:
+              type: string
+              description: type of description requested.
+              enum:
+                - 'cbd'
+                - 'scbd'
+            inference:
+              type: string
+              description: type of inference requested.
+              enum:
+                - 'inferred'
+                - 'noninferred'
+            format:
+              type: string
+              description: type of exchange format requested.
+              enum:
+                - 'rdf'
+                - 'jsonld'
+                - 'ttl'
+                - 'nt'
+       traits:
+          - $ref: "#/components/messageTraits/commonHeaders"
      ingestionBegin:
        name: ingestionBegin
        payload:
