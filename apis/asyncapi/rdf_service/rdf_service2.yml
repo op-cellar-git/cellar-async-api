@@ -9,6 +9,10 @@ channels:
     subscribe:
       message:
          $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/rdfRequest'
+  rdf/rdfConceptRequest:
+    subscribe:
+      message:
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/rdfConceptRequest'         
   rdf/rdfResponse:
     subscribe:
       message:
