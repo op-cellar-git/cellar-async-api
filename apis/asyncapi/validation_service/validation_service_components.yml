@@ -35,6 +35,7 @@ components:
   schemas:
     PrelockValidationBeginPayloadSchema:
       type: object
+      additionalProperties: false      
       properties:
         traceId:
           $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
