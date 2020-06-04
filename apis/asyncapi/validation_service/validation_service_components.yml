@@ -35,14 +35,14 @@ components:
   schemas:
     PrelockValidationBeginPayloadSchema:
       type: object
-      additionalProperties: false      
-      properties:
-        traceId:
-          $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
-        #sharedAreaRef: 
-        #  $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
-      required:
-      - traceId
+      additionalProperties:       
+        properties:
+          traceId:
+            $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/traceIdSchema" 
+          #sharedAreaRef: 
+          #  $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/schemas/sharedAreaRefSchema"
+        required:
+        - traceId
     PrelockValidationEndPayloadSchema:
       type: object
       properties:
