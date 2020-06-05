@@ -143,9 +143,13 @@ components:
             sagaID:
               description: Correlation ID set by application
               type: string
+              format: uuid
+              maximum: 1
             parentID:
               description: Unique identifier for a given instance of the publishing application
               type: string
+              format: uuid
+              maximum: 1
             #join:
               #type: boolean
               #description: Flag to indicate whether to perform a join.
