@@ -23,12 +23,23 @@ channels:
     publish:
       message: 
         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'   
-  end:
+  database/BodyResponse:
+    publish:
+      message:
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/responseBody'
+  rdf/RdfRequest:
+    subscribe:
+      message: 
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/rdfRequest'
+  rdf/RdfConceptRequest:
+    subscribe:
+      message: 
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/rdfConceptRequest'   
+  database/end:
     subscribe:
       message:
          $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
-  fail:
+  database/fail:
     subscribe:
       message:
          $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
-         
