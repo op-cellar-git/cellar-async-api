@@ -61,7 +61,7 @@ channels:
     subscribe:
       message:
          $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
-  CDM2SHACLBegin:
+  sec/CDM2SHACLBegin:
     subscribe:
       message:
          $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
