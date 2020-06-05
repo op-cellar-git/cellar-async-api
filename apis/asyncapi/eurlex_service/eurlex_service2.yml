@@ -5,11 +5,11 @@ info:
   description: Definition of the Eurlex Service API
 
 channels:
-  rdf/rdfRequest:
-    subscribe:
+  eurlex/EurlexRequest:
+    publish:
       message:
          $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/eurlexRequest'
-  rdf/rdfResponse:
+  indexation/{sagaID}/BodyResponse:
     subscribe:
       message:
          $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/responseBody'
