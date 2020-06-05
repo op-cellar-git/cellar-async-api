@@ -10,6 +10,28 @@ components:
        name: responseBody
        payload:
           type: object
+          properties:
+            contentType:
+              type: string
+              description: content type for the current response body.
+              enum:
+                - 'application/rdf+xml'
+                - 'application/json'
+                - 'application/x-turtle'
+                - 'text/rdf+n3' #not registered
+                - 'application/xml'
+            charSet:
+              type: string
+              description: charset for the current response body.
+              enum:
+                - 'UTF-8'
+                - 'UTF-16'
+                - 'ANSI'
+                - 'ISO-8859-1'
+                - 'ASCII'
+            body:
+              type: string
+              description: blob containing the body of the message.
        traits:
           - $ref: "#/components/messageTraits/commonHeaders"
      eurlexRequest:
