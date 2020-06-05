@@ -13,6 +13,7 @@ components:
           properties:
             contentType:
               type: string
+              maximum: 1
               description: content type for the current response body.
               enum:
                 - 'application/rdf+xml'
@@ -22,6 +23,7 @@ components:
                 - 'application/xml'
             charSet:
               type: string
+              maximum: 1
               description: charset for the current response body.
               enum:
                 - 'UTF-8'
@@ -31,6 +33,7 @@ components:
                 - 'ASCII'
             body:
               type: string
+              maximum: 1
               description: blob containing the body of the message.
        traits:
           - $ref: "#/components/messageTraits/commonHeaders"
@@ -41,6 +44,7 @@ components:
          properties:
             objectType:
               type: string
+              maximum: 1
               description: the Eurlex service supports object notices, tree notices, and branch notices.
               enum:
                 - 'object'
@@ -48,9 +52,11 @@ components:
                 - 'branch'
             decoding:
               type: string
+              maximum: 1
               description: 3-chars ISO_639-3 language code specifying the decoding language.
             embargo:
               type: boolean
+              maximum: 1
               description: the parameter defines whether the response should include embargoed data or not.
        traits:
           - $ref: "#/components/messageTraits/commonHeaders"          
@@ -61,6 +67,7 @@ components:
          properties:
             objectType:
               type: string
+              maximum: 1
               description: type of resource requested.
               enum:
                 - 'object'
@@ -68,18 +75,21 @@ components:
                 - 'branch'
             scope:
               type: string
+              maximum: 1
               description: type of description requested.
               enum:
                 - 'cbd'
                 - 'scbd'
             inference:
               type: string
+              maximum: 1
               description: type of inference requested.
               enum:
                 - 'inferred'
                 - 'noninferred'
             format:
               type: string
+              maximum: 1
               description: type of exchange format requested.
               enum:
                 - 'rdf'
@@ -95,24 +105,29 @@ components:
          properties:
             table:
               type: string
+              maximum: 1
               description: name of the table, e.g., corporate-body, eurovoc, etc.
             conceptCode:
               type: string
+              maximum: 1
               description: code from the table, e.g., COM, 42, etc.
             scope:
               type: string
+              maximum: 1
               description: type of description requested.
               enum:
                 - 'cbd'
                 - 'scbd'
             inference:
               type: string
+              maximum: 1
               description: type of inference requested.
               enum:
                 - 'inferred'
                 - 'noninferred'
             format:
               type: string
+              maximum: 1
               description: type of exchange format requested.
               enum:
                 - 'rdf'
@@ -128,6 +143,7 @@ components:
          properties:
             database:
               type: string
+              maximum: 1
               description: ID of the database to ingest.
               enum:
                 - 'S3'
