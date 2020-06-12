@@ -187,3 +187,6 @@ components:
             type: string
             format: uuid
             maximum: 1
+  operationTraits:
+    sec_IngestBegin:
+      description: 'BAAAAAA'

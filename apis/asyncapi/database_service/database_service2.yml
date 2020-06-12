@@ -6,6 +6,7 @@ info:
 
 channels:
   sec/IngestBegin:
+    $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/operationTraits/sec_IngestBegin'
     publish:
       message:
         description: 'The SEC sends this message to trigger the loading of data into the database specified by the `database` parameter. When receiving the message, the Database Service calls the corresponding component in the database layer.'
