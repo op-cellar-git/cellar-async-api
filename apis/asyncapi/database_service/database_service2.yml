@@ -7,19 +7,23 @@ info:
 channels:
   sec/IngestBegin:
     publish:
-      message: 
+      message:
+        description: 'The SEC sends this message to trigger the loading of data into the database specified by the "database" parameter. When receiving the message, the Database Service calls the corresponding component in the database layer.'
         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/ingestionBegin'
   sec/CompensateBegin:
     publish:
       message: 
+        description: 'The SEC sends this message to trigger the loading of data into the database specified by the "database" parameter. When receiving the message, the Database Service calls the corresponding component in the database layer.'
         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
   sec/SnapshotDbBegin:
     publish:
-      message: 
+      message:
+        description: 'The SEC sends this message to trigger a database snapshot of the resources involved in the transaction. When receiving the message, the Database Service calls the snapshot module. The information about which resources are involved in a transaction is available from the Shared Area. The snapshots are saved in a subarea of the Shared Area that is maintained by the Database Service.'
         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
   sec/CleanupBegin:
     publish:
       message: 
+        description: 'The SEC sends this message to trigger a cleanup of all the data in the Shared Area related to the current transaction. When receiving the message, the Database Service calls the cleanup module.'
         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'   
   end:
     subscribe:
