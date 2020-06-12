@@ -1,40 +1,35 @@
-# validation_service.yml
 asyncapi: 2.0.0
 info:
   title: Validation Service API
   version: '0.1'
   description: Definition of the Validation Service API
-servers:
-  production:
-    # the server is just a placeholder at the moment
-    url: broker.cellar.com
-    protocol: amqp
-    description: AsyncMessage Broker
 
 channels:
-  # how to integrate api versioning?
   sec/PrelockValidationBegin:
     publish:
-      message: 
-        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/validation_service/validation_service_components.yml#/components/messages/PrelockValidationBegin'
-  validation/PrelockValidationEnd:
-    subscribe:
       message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/validation_service/validation_service_components.yml#/components/messages/PrelockValidationEnd'
-  validation/PrelockValidationFail:
-    subscribe:
-      message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/validation_service/validation_service_components.yml#/components/messages/PostlockValidationFail'
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/genericMessage'
   sec/PostlockValidationBegin:
     publish:
+      message:
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/genericMessage'
+  validation/{sagaID}/BodyResponse:
+    publish:
+      message:
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/responseBody'
+  rdf/RdfRequest:
+    subscribe:
       message: 
-        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/validation_service/validation_service_components.yml#/components/messages/PostlockValidationBegin'  
-  validation/PostlockValidationEnd:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/rdfRequest'
+  rdf/RdfConceptRequest:
+    subscribe:
+      message: 
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/rdfConceptRequest'   
+  end:
     subscribe:
       message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/validation_service/validation_service_components.yml#/components/messages/PostlockValidationEnd'
-  validation/PostlockValidationFail:
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/genericMessage'
+  fail:
     subscribe:
       message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/validation_service/validation_service_components.yml#/components/messages/PostlockValidationFail'
-
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/genericMessage'
