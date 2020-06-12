@@ -1,172 +1,189 @@
 components:
   messages:
-     genericMessage:
-       name: genericMessage
-       payload:
-          type: object
-       traits:
-          - $ref: "#/components/messageTraits/commonHeaders"
-     responseBody:
-       name: responseBody
-       payload:
-          type: object
-          properties:
-            contentType:
-              type: string
-              maximum: 1
-              description: content type for the current response body.
-              enum:
-                - 'application/rdf+xml'
-                - 'application/json'
-                - 'application/x-turtle'
-                - 'text/rdf+n3' #not registered
-                - 'application/xml'
-            charSet:
-              type: string
-              maximum: 1
-              description: charset for the current response body.
-              enum:
-                - 'UTF-8'
-                - 'UTF-16'
-                - 'ANSI'
-                - 'ISO-8859-1'
-                - 'ASCII'
-            body:
-              type: string
-              maximum: 1
-              description: blob containing the body of the message.
-       traits:
-          - $ref: "#/components/messageTraits/commonHeaders"
-     eurlexRequest:
-       name: eurlexRequest
-       payload:
-         type: object
-         properties:
-            objectType:
-              type: string
-              maximum: 1
-              description: the Eurlex service supports object notices, tree notices, and branch notices.
-              enum:
-                - 'object'
-                - 'tree'
-                - 'branch'
-            decoding:
-              type: string
-              maximum: 1
-              description: 3-chars ISO_639-3 language code specifying the decoding language.
-            embargo:
-              type: boolean
-              maximum: 1
-              description: the parameter defines whether the response should include embargoed data or not.
-       traits:
-          - $ref: "#/components/messageTraits/commonHeaders"          
-     rdfRequest:
-       name: rdfRequest
-       payload:
-         type: object
-         properties:
-            objectType:
-              type: string
-              maximum: 1
-              description: type of resource requested.
-              enum:
-                - 'object'
-                - 'tree'
-                - 'branch'
-            scope:
-              type: string
-              maximum: 1
-              description: type of description requested.
-              enum:
-                - 'cbd'
-                - 'scbd'
-            inference:
-              type: string
-              maximum: 1
-              description: type of inference requested.
-              enum:
-                - 'inferred'
-                - 'noninferred'
-            format:
-              type: string
-              maximum: 1
-              description: type of exchange format requested.
-              enum:
-                - 'rdf'
-                - 'jsonld'
-                - 'ttl'
-                - 'nt'
-       traits:
-          - $ref: "#/components/messageTraits/commonHeaders"
-     rdfConceptRequest:
-       name: rdfRequest
-       payload:
-         type: object
-         properties:
-            table:
-              type: string
-              maximum: 1
-              description: name of the table, e.g., corporate-body, eurovoc, etc.
-            conceptCode:
-              type: string
-              maximum: 1
-              description: code from the table, e.g., COM, 42, etc.
-            scope:
-              type: string
-              maximum: 1
-              description: type of description requested.
-              enum:
-                - 'cbd'
-                - 'scbd'
-            inference:
-              type: string
-              maximum: 1
-              description: type of inference requested.
-              enum:
-                - 'inferred'
-                - 'noninferred'
-            format:
-              type: string
-              maximum: 1
-              description: type of exchange format requested.
-              enum:
-                - 'rdf'
-                - 'jsonld'
-                - 'ttl'
-                - 'nt'
-       traits:
-          - $ref: "#/components/messageTraits/commonHeaders"
-     ingestionBegin:
-       name: ingestionBegin
-       payload:
-         type: object
-         properties:
-            database:
-              type: string
-              maximum: 1
-              description: ID of the database to ingest.
-              enum:
-                - 'S3'
-                - 'ES'
-                - 'Virtuoso'
-       traits:
-          - $ref: "#/components/messageTraits/commonHeaders"
+    genericMessage:
+      name: genericMessage
+      payload:
+        type: object
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
+    responseBody:
+      name: responseBody
+      payload:
+        type: object
+        properties:
+          contentType:
+            type: string
+            maximum: 1
+            description: content type for the current response body.
+            enum:
+              - application/rdf+xml
+              - application/json
+              - text/turtle
+              - application/n-triples
+              - application/xml
+          charSet:
+            type: string
+            maximum: 1
+            description: charset for the current response body.
+            enum:
+              - UTF-8
+              - UTF-16
+              - ANSI
+              - ISO-8859-1
+              - ASCII
+          body:
+            type: string
+            maximum: 1
+            description: blob containing the body of the message.
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
+    eurlexRequest:
+      name: eurlexRequest
+      payload:
+        type: object
+        properties:
+          objectType:
+            type: string
+            maximum: 1
+            description: >-
+              the Eurlex service supports object notices, tree notices, and
+              branch notices.
+            enum:
+              - object
+              - tree
+              - branch
+          decoding:
+            type: string
+            maximum: 1
+            description: 3-chars ISO_639-3 language code specifying the decoding language.
+          embargo:
+            type: boolean
+            maximum: 1
+            description: >-
+              the parameter defines whether the response should include
+              embargoed data or not.
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
+    rdfRequest:
+      name: rdfRequest
+      payload:
+        type: object
+        properties:
+          objectType:
+            type: string
+            maximum: 1
+            description: type of resource requested.
+            enum:
+              - object
+              - tree
+              - branch
+          scope:
+            type: string
+            maximum: 1
+            description: type of description requested.
+            enum:
+              - cbd
+              - scbd
+          inference:
+            type: string
+            maximum: 1
+            description: type of inference requested.
+            enum:
+              - inferred
+              - noninferred
+          format:
+            type: string
+            maximum: 1
+            description: type of exchange format requested.
+            enum:
+              - rdf
+              - jsonld
+              - ttl
+              - nt
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
+    rdfConceptRequest:
+      name: rdfRequest
+      payload:
+        type: object
+        properties:
+          table:
+            type: string
+            maximum: 1
+            description: 'name of the table, e.g., corporate-body, eurovoc, etc.'
+          conceptCode:
+            type: string
+            maximum: 1
+            description: 'code from the table, e.g., COM, 42, etc.'
+          scope:
+            type: string
+            maximum: 1
+            description: type of description requested.
+            enum:
+              - cbd
+              - scbd
+          inference:
+            type: string
+            maximum: 1
+            description: type of inference requested.
+            enum:
+              - inferred
+              - noninferred
+          format:
+            type: string
+            maximum: 1
+            description: type of exchange format requested.
+            enum:
+              - rdf
+              - jsonld
+              - ttl
+              - nt
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
+    ingestionBegin:
+      name: ingestionBegin
+      payload:
+        type: object
+        properties:
+          database:
+            type: string
+            maximum: 1
+            description: ID of the database to ingest.
+            enum:
+              - S3
+              - ES
+              - Virtuoso
+              - RDBMS
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
+    end:
+      name: end
+      description: 'A message to notify the SEC that a Saga step completed successfully.'
+      payload:
+        type: object
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
+    fail:
+      name: fail
+      description: 'A message to notify the SEC that a Saga step failed.'
+      payload:
+        type: object
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
   messageTraits:
     commonHeaders:
       headers:
-          type: object
-          properties:
-            sagaID:
-              description: Correlation ID set by application
-              type: string
-              format: uuid
-              maximum: 1
-            parentID:
-              description: Unique identifier for a given instance of the publishing application
-              type: string
-              format: uuid
-              maximum: 1
-            #join:
-              #type: boolean
-              #description: Flag to indicate whether to perform a join.
-              #default: false 
+        type: object
+        properties:
+          sagaID:
+            description: Correlation ID set by application
+            type: string
+            format: uuid
+            maximum: 1
+          parentID:
+            description: >-
+              Unique identifier for a given instance of the publishing
+              application
+            type: string
+            format: uuid
+            maximum: 1

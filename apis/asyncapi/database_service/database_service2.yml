@@ -8,12 +8,12 @@ channels:
   sec/IngestBegin:
     publish:
       message:
-        description: 'The SEC sends this message to trigger the loading of data into the database specified by the "database" parameter. When receiving the message, the Database Service calls the corresponding component in the database layer.'
+        description: 'The SEC sends this message to trigger the loading of data into the database specified by the `database` parameter. When receiving the message, the Database Service calls the corresponding component in the database layer.'
         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/ingestionBegin'
   sec/CompensateBegin:
     publish:
       message: 
-        description: 'The SEC sends this message to trigger the loading of data into the database specified by the "database" parameter. When receiving the message, the Database Service calls the corresponding component in the database layer.'
+        description: 'The SEC sends this message to trigger the loading of data into the database specified by the database` parameter. When receiving the message, the Database Service calls the corresponding component in the database layer.'
         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
   sec/SnapshotDbBegin:
     publish:
@@ -28,8 +28,8 @@ channels:
   end:
     subscribe:
       message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/end'
   fail:
     subscribe:
       message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/genericMessage'
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components2.yml#/components/messages/fail'
