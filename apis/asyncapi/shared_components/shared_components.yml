@@ -1,17 +1,192 @@
-# shared_components.yml
 components:
-    schemas:
-      traceIdSchema:
-        type: string
-        description: A trace id to correlate messages of a Saga transaction. The parameter also serves as a reference to a location in the Shared Area where all the data relevant for the current transaction is stored. Services maintain their own subarea in that location.
-        format: uuid
-        maximum: 1
-        example: "7a7cd594-5dce-4e61-93a7-d8b1df39bd09"
-      sharedAreaRefSchema:
-        type: string
-        description: Reference to the Shared Area where all the data that is relevant for the current transaction is needed. Services can access the input data from here but also store any kind of temporary data. Generally, a reference to the shared area is sufficient for the execution of a task. Services implement internal rules based on which they derive from where in the Shared Area a specific piece of information can be retrieved, e.g., by using fixed folder names for different tasks. 
-        example: "https://s3.amazonaws.com/cellar-transaction-bucket/publications_europa_eu_resource_pegase_20180927_top_level_event_1_94b9a53b-a982-4c94-bb1e-536acbd4268c "
-    correlationIds:
-      traceIdCorrelator:
-        description: Data from message payload used as correlation ID
-        location: $message.payload#/traceId
+  messages:
+    genericMessage:
+      name: genericMessage
+      payload:
+        type: object
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
+    responseBody:
+      name: responseBody
+      payload:
+        type: object
+        properties:
+          contentType:
+            type: string
+            maximum: 1
+            description: content type for the current response body.
+            enum:
+              - application/rdf+xml
+              - application/json
+              - text/turtle
+              - application/n-triples
+              - application/xml
+          charSet:
+            type: string
+            maximum: 1
+            description: charset for the current response body.
+            enum:
+              - UTF-8
+              - UTF-16
+              - ANSI
+              - ISO-8859-1
+              - ASCII
+          body:
+            type: string
+            maximum: 1
+            description: blob containing the body of the message.
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
+    eurlexRequest:
+      name: eurlexRequest
+      payload:
+        type: object
+        properties:
+          objectType:
+            type: string
+            maximum: 1
+            description: >-
+              the Eurlex service supports object notices, tree notices, and
+              branch notices.
+            enum:
+              - object
+              - tree
+              - branch
+          decoding:
+            type: string
+            maximum: 1
+            description: 3-chars ISO_639-3 language code specifying the decoding language.
+          embargo:
+            type: boolean
+            maximum: 1
+            description: >-
+              the parameter defines whether the response should include
+              embargoed data or not.
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
+    rdfRequest:
+      name: rdfRequest
+      payload:
+        type: object
+        properties:
+          objectType:
+            type: string
+            maximum: 1
+            description: type of resource requested.
+            enum:
+              - object
+              - tree
+              - branch
+          scope:
+            type: string
+            maximum: 1
+            description: type of description requested.
+            enum:
+              - cbd
+              - scbd
+          inference:
+            type: string
+            maximum: 1
+            description: type of inference requested.
+            enum:
+              - inferred
+              - noninferred
+          format:
+            type: string
+            maximum: 1
+            description: type of exchange format requested.
+            enum:
+              - rdf
+              - jsonld
+              - ttl
+              - nt
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
+    rdfConceptRequest:
+      name: rdfRequest
+      payload:
+        type: object
+        properties:
+          table:
+            type: string
+            maximum: 1
+            description: 'name of the table, e.g., corporate-body, eurovoc, etc.'
+          conceptCode:
+            type: string
+            maximum: 1
+            description: 'code from the table, e.g., COM, 42, etc.'
+          scope:
+            type: string
+            maximum: 1
+            description: type of description requested.
+            enum:
+              - cbd
+              - scbd
+          inference:
+            type: string
+            maximum: 1
+            description: type of inference requested.
+            enum:
+              - inferred
+              - noninferred
+          format:
+            type: string
+            maximum: 1
+            description: type of exchange format requested.
+            enum:
+              - rdf
+              - jsonld
+              - ttl
+              - nt
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
+    ingestionBegin:
+      name: ingestionBegin
+      payload:
+        type: object
+        properties:
+          database:
+            type: string
+            maximum: 1
+            description: ID of the database to ingest.
+            enum:
+              - S3
+              - ES
+              - Virtuoso
+              - RDBMS
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
+    end:
+      name: end
+      description: 'A message to notify the SEC that a Saga step completed successfully.'
+      payload:
+        type: object
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
+    fail:
+      name: fail
+      description: 'A message to notify the SEC that a Saga step failed.'
+      payload:
+        type: object
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
+  messageTraits:
+    commonHeaders:
+      headers:
+        type: object
+        properties:
+          sagaID:
+            description: Correlation ID set by application
+            type: string
+            format: uuid
+            maximum: 1
+          parentID:
+            description: >-
+              Unique identifier for a given instance of the publishing
+              application
+            type: string
+            format: uuid
+            maximum: 1
+  operationTraits:
+    sec_IngestBegin:
+      description: 'BAAAAAA'
