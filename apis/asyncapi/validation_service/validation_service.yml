@@ -13,6 +13,6 @@ channels:
         - $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
     subscribe:
       message:
-        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/ValidationBegin'
+        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/ValidationEnd'
         traits:
         - $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  

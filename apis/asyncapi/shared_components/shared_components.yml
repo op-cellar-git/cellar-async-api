@@ -27,6 +27,58 @@ components:
               - PostlockValidationEnd
               - SnapshotValidationEnd
               - Fail
+    LockBegin:
+      payload:
+        type: object
+        properties:
+          msg:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+            enum:
+              - LockBegin
+              - UnlockBegin
+    LockEnd:
+      payload:
+        type: object
+        properties:
+          msg:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+            enum:
+              - LockEnd
+              - UnlockEnd
+              - Fail
+    IndexationBegin:
+      payload:
+        type: object
+        properties:
+          msg:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+            enum:
+              - IndexationBegin
+              - CompensatingIndexationBegin
+              - SnapshotIndexationBegin
+    IndexationEnd:
+      payload:
+        type: object
+        properties:
+          msg:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+            enum:
+              - IndexationEnd
+              - CompensatingIndexationEnd
+              - SnapshotIndexationEnd
+              - Fail
   messageTraits:
     commonHeaders:
       headers:
