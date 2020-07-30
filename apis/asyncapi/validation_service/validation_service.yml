@@ -8,34 +8,11 @@ channels:
   ValidationService:
     publish:
       message:
-        payload:
-          type: object
-          properties:
-            msg:
-              type: string
-              maximum: 1
-              minimum: 1
-              description: type of description requested.
-              enum:
-                - PrelockValidationBegin
-                - PostlockValidationBegin
-                - SnapshotValidationBegin
+        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/ValidationBegin'
         traits:
-        - $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
+        - $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
     subscribe:
       message:
-        payload:
-          type: object
-          properties:
-            msg:
-              type: string
-              maximum: 1
-              minimum: 1
-              description: type of description requested.
-              enum:
-                - PrelockValidationEnd
-                - PostlockValidationEnd
-                - SnapshotValidationEnd
-                - Fail
+        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/ValidationBegin'
         traits:
-        - $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
+        - $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
