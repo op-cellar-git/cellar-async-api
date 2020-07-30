@@ -13,20 +13,32 @@ components:
               - PrelockValidationBegin
               - PostlockValidationBegin
               - SnapshotValidationBegin
+    ValidationEnd:
+      payload:
+        type: object
+        properties:
+          msg:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+            enum:
+              - PrelockValidationEnd
+              - PostlockValidationEnd
+              - SnapshotValidationEnd
+              - Fail
   messageTraits:
     commonHeaders:
       headers:
         type: object
         properties:
           sagaID:
-            description: Correlation ID set by application
+            description: Saga-ID
             type: string
             format: uuid
             maximum: 1
           parentID:
-            description: >-
-              Unique identifier for a given instance of the publishing
-              application
+            description: Activity-ID
             type: string
             format: uuid
             maximum: 1
