@@ -164,7 +164,7 @@ components:
             format: uuid
             maximum: 1
             minimum: 1
-          ParentID:
+          ActivityID:
             description: Activity-ID
             type: string
             format: uuid
