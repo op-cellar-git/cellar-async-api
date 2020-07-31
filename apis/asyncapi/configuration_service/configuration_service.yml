@@ -8,12 +8,12 @@ channels:
   ConfigurationService:
     publish:
       message:
-        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/ConfigurationBegin'
+        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/ConfigsBegin'
         traits:
         - $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
     subscribe:
       message:
-        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/ConfigurationEnd'
+        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/ConfigsEnd'
         traits:
         - $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
 
