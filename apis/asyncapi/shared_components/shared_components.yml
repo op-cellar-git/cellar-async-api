@@ -79,18 +79,94 @@ components:
               - CompensatingIndexationEnd
               - SnapshotIndexationEnd
               - Fail
+    ConfigsBegin:
+      payload:
+        type: object
+        properties:
+          msg:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+            enum:
+              - ConfigsBegin
+              - PushConfigsBegin
+              - CompensatingPushConfigsBegin
+    ConfigsEnd:
+      payload:
+        type: object
+        properties:
+          msg:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+            enum:
+              - ConfigsEnd
+              - PushConfigsEnd
+              - CompensatingPushConfigsEnd
+              - Fail
+    DatabaseBegin:
+      payload:
+        type: object
+        properties:
+          msg:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+            enum:
+              - IngestionBegin
+              - CompensatingIngestionBegin
+              - SnapshotDatabaseBegin
+              - CleanUpBegin
+          database:
+            type: string
+            maximum: 1
+            description: ID of the database to ingest.
+            enum:
+              - S3
+              - ES
+              - Virtuoso
+              - RDBMS
+    DatabaseEnd:
+      payload:
+        type: object
+        properties:
+          msg:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+            enum:
+              - IngestionEnd
+              - CompensatingIngestionEnd
+              - SnapshotDatabaseEnd
+              - CleanUpEnd
+              - Fail  
+          database:
+            type: string
+            maximum: 1
+            description: ID of the database to ingest.
+            enum:
+              - S3
+              - ES
+              - Virtuoso
+              - RDBMS         
   messageTraits:
     commonHeaders:
       headers:
         type: object
         properties:
-          sagaID:
+          SagaID:
             description: Saga-ID
             type: string
             format: uuid
             maximum: 1
-          parentID:
+            minimum: 1
+          ParentID:
             description: Activity-ID
             type: string
             format: uuid
             maximum: 1
+            minimum: 1
