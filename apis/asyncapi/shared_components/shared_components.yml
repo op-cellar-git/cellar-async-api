@@ -12,7 +12,6 @@ components:
             enum:
               - PrelockValidationBegin
               - PostlockValidationBegin
-              - SnapshotValidationBegin
     ValidationEnd:
       payload:
         type: object
@@ -25,7 +24,6 @@ components:
             enum:
               - PrelockValidationEnd
               - PostlockValidationEnd
-              - SnapshotValidationEnd
               - Fail
     LockBegin:
       payload:
