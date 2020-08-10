@@ -5,39 +5,15 @@ info:
   description: Definition of the Indexation Service API
 
 channels:
-  sec/DirectIndexationBegin:
+  IndexationService:
     publish:
       message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/genericMessage'
-  sec/DependencyIndexationBegin:
-    publish:
-      message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/genericMessage'
-  sec/SCBDInfBegin:
-    publish:
-      message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/genericMessage'
-  indexation/{sagaID}/BodyResponse:
-    publish:
-      message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/responseBody'
-  rdf/RdfRequest:
-    subscribe:
-      message: 
-        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/rdfRequest'
-  eurlex/EurlexRequest:
-    subscribe:
-      message: 
-        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/eurlexRequest'
-  rdf/RdfConceptRequest:
-    subscribe:
-      message: 
-        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/rdfConceptRequest'   
-  end:
+        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/IndexationBegin'
+        traits:
+        - $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
     subscribe:
       message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/genericMessage'
-  fail:
-    subscribe:
-      message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/genericMessage'
+        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/IndexationEnd'
+        traits:
+        - $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
+
