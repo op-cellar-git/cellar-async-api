@@ -8,12 +8,12 @@ channels:
   DatabaseService:
     publish:
       message:
-        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/DatabaseBegin'
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messages/DatabaseBegin'
         traits:
-        - $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
+        - $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
     subscribe:
       message:
-        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/DatabaseEnd'
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messages/DatabaseEnd'
         traits:
-        - $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
+        - $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
 

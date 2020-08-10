@@ -8,16 +8,16 @@ channels:
   rdf/rdfRequest:
     publish:
       message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/rdfRequest'
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messages/rdfRequest'
   rdf/rdfConceptRequest:
     publish:
       message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/rdfConceptRequest'         
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messages/rdfConceptRequest'         
   indexation/{sagaID}/BodyResponse:
     subscribe:
       message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/responseBody'
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messages/responseBody'
   validation/{sagaID}/BodyResponse:
     subscribe:
       message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/responseBody'
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messages/responseBody'

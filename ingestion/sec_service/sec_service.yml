@@ -8,57 +8,57 @@ channels:
   DatabaseService:
     subscribe:
       message:
-        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/DatabaseBegin'
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messages/DatabaseBegin'
         traits:
-        - $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
+        - $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
     publish:
       message:
-        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/DatabaseEnd'
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messages/DatabaseEnd'
         traits:
-        - $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
+        - $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
   ValidationService:
     subscribe:
       message:
-        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/ValidationBegin'
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messages/ValidationBegin'
         traits:
-        - $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
+        - $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
     publish:
       message:
-        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/ValidationEnd'
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messages/ValidationEnd'
         traits:
-        - $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'
+        - $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'
   LockService:
     subscribe:
       message:
-        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/LockBegin'
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messages/LockBegin'
         traits:
-        - $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
+        - $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
     publish:
       message:
-        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/LockEnd'
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messages/LockEnd'
         traits:
-        - $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders' 
+        - $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messageTraits/commonHeaders' 
   IndexationService:
     subscribe:
       message:
-        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/IndexationBegin'
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messages/IndexationBegin'
         traits:
-        - $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
+        - $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
     publish:
       message:
-        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/IndexationEnd'
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messages/IndexationEnd'
         traits:
-        - $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'
+        - $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'
   ConfigurationService:
     subscribe:
       message:
-        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/ConfigsBegin'
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messages/ConfigsBegin'
         traits:
-        - $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
+        - $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
     publish:
       message:
-        $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messages/ConfigsEnd'
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messages/ConfigsEnd'
         traits:
-        - $ref: 'https://raw.githubusercontent.com/simonegasperoni/cellar-transaction/master/apis/asyncapi/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
+        - $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
  
  
