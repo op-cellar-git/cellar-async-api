@@ -5,10 +5,231 @@ info:
   description: Definition of the Health Check API
 
 channels:
-  HealthChannel:  
-    subscribe:
-      message:
-        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messages/DatabaseEnd'
-        traits:
-        - $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
+  HealthLockingChannel: 
+   subscribe:
+     message:
+      payload:
+        type: object
+        properties:
+          LockLastElapsed:
+            type: integer
+            format: milliseconds
+            maximum: 1
+            description: elapsed time for the last execution
 
+          UnlockLastElapsed:
+            type: integer
+            format: milliseconds
+            maximum: 1
+            description: elapsed time for the last execution
+
+          DistributedLockClusterConnectionOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: distributed lock cluster connection
+              
+          SharedAreaConnectionOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: shared area connection
+
+          PackageAreaConnectionOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: package area connection
+
+      traits:
+        - $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/health/shared_components.yml#/components/messageTraits/common"
+
+
+  HealthValidationChannel: 
+   subscribe:
+     message:
+      payload:
+        type: object
+        properties:
+          PostlockValidationLastElapsed:
+            type: integer
+            format: milliseconds
+            maximum: 1
+            description: elapsed time for the last execution
+
+          PrelockValidationLastElapsed:
+            type: integer
+            format: milliseconds
+            maximum: 1
+            description: elapsed time for the last execution
+
+          SharedAreaConnectionOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: shared area connection
+
+          PackageAreaConnectionOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: package area connection
+
+      traits:
+        - $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/health/shared_components.yml#/components/messageTraits/common"
+        
+  HealthConfigurationChannel: 
+   subscribe:
+     message:
+      payload:
+        type: object
+        properties:
+          CdmReasonerLastElapsed:
+            type: integer
+            format: milliseconds
+            maximum: 1
+            description: elapsed time for the last execution
+
+          SKOSReasonerLastElapsed:
+            type: integer
+            format: milliseconds
+            maximum: 1
+            description: elapsed time for the last execution
+            
+          CDM2SHACLLastElapsed:
+            type: integer
+            format: milliseconds
+            maximum: 1
+            description: elapsed time for the last execution
+
+          SharedAreaConnectionOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: shared area connection
+ 
+              
+          ConfigurationConnectionOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: configurations connection
+      
+              
+          PackageAreaConnectionOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: package area connection
+
+      traits:
+        - $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/health/shared_components.yml#/components/messageTraits/common"
+        
+  HealthIndexationChannel: 
+   subscribe:
+     message:
+      payload:
+        type: object
+        properties:
+          SnapshotIndexationLastElapsed:
+            type: integer
+            format: milliseconds
+            maximum: 1
+            description: elapsed time for the last execution
+
+          DirectIndexationLastElapsed:
+            type: integer
+            format: milliseconds
+            maximum: 1
+            description: elapsed time for the last execution
+            
+          NeighborIndexationLastElapsed:
+            type: integer
+            format: milliseconds
+            maximum: 1
+            description: elapsed time for the last execution
+
+          SharedAreaConnectionOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: shared area connection
+              
+          RDBMSConnectionOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: RDBMS connection   
+              
+          PackageAreaConnectionOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: package area connection
+
+      traits:
+        - $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/health/shared_components.yml#/components/messageTraits/common"
+        
+        
+  HealthDatabaseChannel: 
+   subscribe:
+     message:
+      payload:
+        type: object
+        properties:
+          SnapshotDatabaseLastElapsed:
+            type: integer
+            format: milliseconds
+            maximum: 1
+            description: elapsed time for the last execution
+
+          CleanupLastElapsed:
+            type: integer
+            format: milliseconds
+            maximum: 1
+            description: elapsed time for the last execution
+            
+          DataPreparationLastElapsed:
+            type: integer
+            format: milliseconds
+            maximum: 1
+            description: elapsed time for the last execution
+
+          SharedAreaConnectionOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: shared area connection
+              
+          RDBMSConnectionOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: RDBMS connection     
+              
+          PackageAreaConnectionOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: package area connection
+              
+          ESConnectionOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: ES connection
+              
+          S3ConnectionOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: S3 connection
+
+          VirtuosoConnectionOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: Virtuoso connection
+ 
+      traits:
+        - $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/health/shared_components.yml#/components/messageTraits/common"
