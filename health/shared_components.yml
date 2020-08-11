@@ -4,12 +4,12 @@ components:
       payload:
         type: object
         properties:
-          SagaID:
+          MachineID:
             description: Machine-ID
             type: string
             maximum: 1
             minimum: 1
-          ActivityID:
+          Health:
             description: Health
             type: string
             maximum: 1
