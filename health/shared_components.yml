@@ -1,7 +1,7 @@
 components:
   messageTraits:
     commonPayload:
-      headers:
+      payload:
         type: object
         properties:
           SagaID:
