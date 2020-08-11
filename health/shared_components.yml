@@ -11,19 +11,18 @@ components:
             minimum: 1
           MainMemoryUsage:
             description: main memory usage
-            type: string
+            type: integer
+            format: megabytes
             maximum: 1
             minimum: 1
           SecondaryMemoryUsage:
             description: secondary memory usage
-            type: string
+            type: integer
+            format: megabytes
             maximum: 1
             minimum: 1
-          Health:
-            type: string
+          HealthOK:
+            type: boolean
             maximum: 1
             minimum: 1
             description: health status
-            enum:
-              - ok
-              - ko
