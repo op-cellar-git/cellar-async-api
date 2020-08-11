@@ -1,7 +1,7 @@
 components:
   messageTraits:
-    commonPayload:
-      payload:
+    common:
+      headers:
         type: object
         properties:
           MachineID:
