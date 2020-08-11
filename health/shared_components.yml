@@ -9,8 +9,21 @@ components:
             type: string
             maximum: 1
             minimum: 1
-          Health:
-            description: Health
+          MainMemoryUsage:
+            description: main memory usage
             type: string
             maximum: 1
             minimum: 1
+          SecondaryMemoryUsage:
+            description: secondary memory usage
+            type: string
+            maximum: 1
+            minimum: 1
+          Health:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: health status
+            enum:
+              - ok
+              - ko
