@@ -145,6 +145,7 @@ components:
           database:
             type: string
             maximum: 1
+            minimum: 1
             description: ID of the database to ingest.
             enum:
               - S3
