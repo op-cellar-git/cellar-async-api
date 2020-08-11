@@ -1,0 +1,16 @@
+components:
+  messageTraits:
+    commonPayload:
+      headers:
+        type: object
+        properties:
+          SagaID:
+            description: Machine-ID
+            type: string
+            maximum: 1
+            minimum: 1
+          ActivityID:
+            description: Health
+            type: string
+            maximum: 1
+            minimum: 1

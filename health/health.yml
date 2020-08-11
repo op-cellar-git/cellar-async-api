@@ -1,0 +1,14 @@
+asyncapi: 2.0.0
+info:
+  title: HealthCheck API
+  version: '0.1'
+  description: Definition of the Health Check API
+
+channels:
+  HealthChannel:  
+    subscribe:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messages/DatabaseEnd'
+        traits:
+        - $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/ingestion/shared_components/shared_components.yml#/components/messageTraits/commonHeaders'  
+
