@@ -1,12 +1,17 @@
 asyncapi: 2.0.0
 info:
   title: HealthCheck API
-  version: '0.1'
+  version: '0.1.1'
   description: Definition of the Health Check API
 
 channels:
   HealthLockingChannel: 
+  
    subscribe:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/health/shared_components.yml#/components/messages/HealthCheck'
+        
+   publish:
      message:
       payload:
         type: object
@@ -46,7 +51,12 @@ channels:
 
 
   HealthValidationChannel: 
+   
    subscribe:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/health/shared_components.yml#/components/messages/HealthCheck'
+   
+   publish:
      message:
       payload:
         type: object
@@ -79,7 +89,12 @@ channels:
         - $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/health/shared_components.yml#/components/messageTraits/common"
         
   HealthConfigurationChannel: 
+  
    subscribe:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/health/shared_components.yml#/components/messages/HealthCheck'
+  
+   publish:
      message:
       payload:
         type: object
@@ -108,13 +123,11 @@ channels:
             minimum: 1
             description: shared area connection
  
-              
           ConfigurationConnectionOK:
             type: boolean
             maximum: 1
             minimum: 1
-            description: configurations connection
-      
+            description: configurations connection     
               
           PackageAreaConnectionOK:
             type: boolean
@@ -126,7 +139,12 @@ channels:
         - $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/health/shared_components.yml#/components/messageTraits/common"
         
   HealthIndexationChannel: 
+   
    subscribe:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/health/shared_components.yml#/components/messages/HealthCheck'
+  
+   publish:
      message:
       payload:
         type: object
@@ -172,7 +190,12 @@ channels:
         
         
   HealthDatabaseChannel: 
+  
    subscribe:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/health/shared_components.yml#/components/messages/HealthCheck'
+  
+   publish:
      message:
       payload:
         type: object
