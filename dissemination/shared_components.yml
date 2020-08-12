@@ -1,7 +1,5 @@
 components:
   messages:
-
-
     responseBody:
       name: responseBody
       payload:
