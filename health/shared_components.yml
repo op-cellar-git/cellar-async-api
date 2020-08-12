@@ -1,4 +1,16 @@
 components:
+  messages:
+    HealthCheck:
+      payload:
+        type: object
+        properties:
+          msg:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: check request
+            enum:
+              - HealthCheck
   messageTraits:
     common:
       headers:
