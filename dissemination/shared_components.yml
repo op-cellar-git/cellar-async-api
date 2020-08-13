@@ -1,6 +1,32 @@
 components:
   messages:
-    responseBody:
+    responseBodyXML:
+      name: responseBody
+      payload:
+        type: object
+        properties:
+          contentType:
+            type: string
+            maximum: 1
+            description: content type for the current response body.
+            enum:
+              - application/xml
+          charSet:
+            type: string
+            maximum: 1
+            description: charset for the current response body.
+            enum:
+              - UTF-8
+              - UTF-16
+              - ANSI
+              - ISO-8859-1
+              - ASCII
+          body:
+            type: string
+            maximum: 1
+            description: blob containing the body of the message.
+
+    responseBodyRDF:
       name: responseBody
       payload:
         type: object
@@ -14,7 +40,6 @@ components:
               - application/json
               - text/turtle
               - application/n-triples
-              - application/xml
           charSet:
             type: string
             maximum: 1
