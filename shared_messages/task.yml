@@ -1,0 +1,93 @@
+components:
+  messages:
+    SECTaskRequestByID:
+      payload:
+        type: object
+        properties:
+          request:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+            enum:
+              - Info
+              - Stop
+              - Resume
+              - Abort
+          id:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+      traits:
+        - $ref: "#/components/messageTraits/common"
+
+    SECTaskRequest:
+      payload:
+        type: object
+        properties:
+          request:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+            enum:
+              - Info
+              - Stop
+              - Resume
+              - Abort
+      traits:
+        - $ref: "#/components/messageTraits/common"
+        
+    SECTaskResult:
+      payload:
+        type: array
+        properties:
+          Trace-ID:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+          Activity-ID:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+          Cellar-ID:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+          Saga-state:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+          Compensation-state:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+          Task-state:
+            type: String
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+            enum:
+              - Running
+              - Finished
+              - Aborted
+      traits:
+        - $ref: "#/components/messageTraits/common"
+   
+  messageTraits:
+    common:
+      headers:
+        type: object
+        properties:
+          RequestID:
+            description: Request-ID
+            type: string
+            format: uuid
+            maximum: 1
+            minimum: 1

@@ -5,6 +5,28 @@ info:
   description: Definition of the SEC Service API
 
 channels:
+
+  SECTaskRequestByID:
+    publish:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/task.yml#/components/messages/SECTaskRequestByID'
+    subscribe:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/task.yml#/components/messages/SECTaskResult'
+  SECTaskRequest:
+    publish:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/task.yml#/components/messages/SECTaskRequest'
+    subscribe:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/task.yml#/components/messages/SECTaskResult'
+  RdfSnapshotSaga:
+    subscribe:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/ingestion.yml#/components/messages/RdfRequestBegin'
+    publish:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/ingestion.yml#/components/messages/RdfRequestEnd'
   DatabaseService:
     subscribe:
       message:
