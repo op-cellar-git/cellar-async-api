@@ -5,15 +5,23 @@ info:
   description: Definition of the RDF Service API
 
 channels:
+  RdfSnapshotSaga:
+    publish:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/ingestion.yml#/components/messages/RdfRequestBegin'
+    subscribe:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/ingestion.yml#/components/messages/RdfRequestEnd'
+
   rdf/RdfRequest:
     publish:
       message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/dissemination/shared_components.yml#/components/messages/rdfRequest'
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/dissemination.yml#/components/messages/rdfRequest'
   rdf/RdfConceptRequest:
     publish:
       message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/dissemination/shared_components.yml#/components/messages/rdfConceptRequest'         
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/dissemination.yml#/components/messages/rdfConceptRequest'         
   rdf/Response:
     subscribe:
       message:
-         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-transaction/master/dissemination/shared_components.yml#/components/messages/responseBodyRDF'
+         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/dissemination.yml#/components/messages/responseBodyRDF'

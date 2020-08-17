@@ -181,6 +181,62 @@ components:
               - RDBMS 
       traits:
         - $ref: "#/components/messageTraits/common"
+
+
+    RdfRequestBegin:
+      name: rdfRequest
+      payload:
+        type: object
+        properties:
+          objectType:
+            type: string
+            maximum: 1
+            description: type of resource requested.
+            enum:
+              - object
+              - tree
+              - branch
+          scope:
+            type: string
+            maximum: 1
+            description: type of description requested.
+            enum:
+              - cbd
+              - scbd
+          inference:
+            type: string
+            maximum: 1
+            description: type of inference requested.
+            enum:
+              - inferred
+              - noninferred
+          format:
+            type: string
+            maximum: 1
+            description: type of exchange format requested.
+            enum:
+              - rdf
+              - jsonld
+              - ttl
+              - nt
+      traits:
+        - $ref: "#/components/messageTraits/common"
+    
+    RdfRequestEnd:
+      payload:
+        type: object
+        properties:
+          msg:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+            enum:
+              - RdfRequestEnd
+      traits:
+        - $ref: "#/components/messageTraits/common"
+
+
               
   messageTraits:
     common:

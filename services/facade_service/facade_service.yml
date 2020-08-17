@@ -1,0 +1,42 @@
+asyncapi: 2.0.0
+info:
+  title: Facade Service API
+  version: '0.2'
+  description: Definition of the Facade Service API
+
+channels:
+  LockingHealth:
+    subscribe:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/health.yml#/components/messages/HealthCheck'
+    publish:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/health.yml#/components/messages/HealthLocking'
+  ConfigurationHealth:
+    subscribe:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/health.yml#/components/messages/HealthCheck'
+    publish:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/health.yml#/components/messages/HealthConfiguration'
+  ValidationHealth:
+    subscribe:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/health.yml#/components/messages/HealthCheck'
+    publish:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/health.yml#/components/messages/HealthValidation'
+  DatabaseHealth:
+    subscribe:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/health.yml#/components/messages/HealthCheck'
+    publish:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/health.yml#/components/messages/HealthDatabase'
+  IndexationHealth:
+    subscribe:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/health.yml#/components/messages/HealthCheck'
+    publish:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/health.yml#/components/messages/HealthIndexation'
