@@ -39,7 +39,7 @@ components:
         - $ref: "#/components/messageTraits/common"    
     SECTaskResult:
       payload:
-        type: array
+        type: object
         properties:
           trace-ID:
             type: string
