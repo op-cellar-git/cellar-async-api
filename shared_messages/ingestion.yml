@@ -12,6 +12,9 @@ components:
             enum:
               - PrelockValidationBegin
               - PostlockValidationBegin
+      traits:
+        - $ref: "#/components/messageTraits/common"
+        
     ValidationEnd:
       payload:
         type: object
@@ -25,6 +28,9 @@ components:
               - PrelockValidationEnd
               - PostlockValidationEnd
               - Fail
+      traits:
+        - $ref: "#/components/messageTraits/common"
+        
     LockBegin:
       payload:
         type: object
@@ -37,6 +43,9 @@ components:
             enum:
               - LockBegin
               - UnlockBegin
+      traits:
+        - $ref: "#/components/messageTraits/common"
+              
     LockEnd:
       payload:
         type: object
@@ -50,6 +59,9 @@ components:
               - LockEnd
               - UnlockEnd
               - Fail
+      traits:
+        - $ref: "#/components/messageTraits/common"
+              
     IndexationBegin:
       payload:
         type: object
@@ -63,6 +75,9 @@ components:
               - IndexationBegin
               - CompensatingIndexationBegin
               - SnapshotIndexationBegin
+      traits:
+        - $ref: "#/components/messageTraits/common"
+              
     IndexationEnd:
       payload:
         type: object
@@ -77,6 +92,9 @@ components:
               - CompensatingIndexationEnd
               - SnapshotIndexationEnd
               - Fail
+      traits:
+        - $ref: "#/components/messageTraits/common"
+              
     ConfigsBegin:
       payload:
         type: object
@@ -90,6 +108,9 @@ components:
               - ConfigsBegin
               - PushConfigsBegin
               - CompensatingPushConfigsBegin
+      traits:
+        - $ref: "#/components/messageTraits/common"
+              
     ConfigsEnd:
       payload:
         type: object
@@ -104,6 +125,9 @@ components:
               - PushConfigsEnd
               - CompensatingPushConfigsEnd
               - Fail
+      traits:
+        - $ref: "#/components/messageTraits/common"
+              
     DatabaseBegin:
       payload:
         type: object
@@ -127,6 +151,9 @@ components:
               - ES
               - Virtuoso
               - RDBMS
+      traits:
+        - $ref: "#/components/messageTraits/common"
+              
     DatabaseEnd:
       payload:
         type: object
@@ -151,9 +178,12 @@ components:
               - S3
               - ES
               - Virtuoso
-              - RDBMS         
+              - RDBMS 
+      traits:
+        - $ref: "#/components/messageTraits/common"
+              
   messageTraits:
-    commonHeaders:
+    common:
       headers:
         type: object
         properties:
