@@ -2,7 +2,7 @@ components:
   messages:
     SECTaskRequestByID:
       payload:
-        type: array
+        type: object
         properties:
           request:
             type: string
@@ -21,7 +21,6 @@ components:
             description: type of description requested.
       traits:
         - $ref: "#/components/messageTraits/common"
-
     SECTaskRequest:
       payload:
         type: object
@@ -37,38 +36,37 @@ components:
               - Resume
               - Abort
       traits:
-        - $ref: "#/components/messageTraits/common"
-        
+        - $ref: "#/components/messageTraits/common"    
     SECTaskResult:
       payload:
         type: array
         properties:
-          Trace-ID:
+          trace-ID:
             type: string
             maximum: 1
             minimum: 1
             description: type of description requested.
-          Activity-ID:
+          activity-ID:
             type: string
             maximum: 1
             minimum: 1
             description: type of description requested.
-          Cellar-ID:
+          cellar-ID:
             type: string
             maximum: 1
             minimum: 1
             description: type of description requested.
-          Saga-state:
+          saga-state:
             type: string
             maximum: 1
             minimum: 1
             description: type of description requested.
-          Compensation-state:
+          compensation-state:
             type: boolean
             maximum: 1
             minimum: 1
             description: type of description requested.
-          Task-state:
+          task-state:
             type: String
             maximum: 1
             minimum: 1
