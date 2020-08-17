@@ -42,18 +42,42 @@ components:
       payload:
         type: array
         properties:
-          request:
+          trace-ID:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+          activity-ID:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+          cellar-ID:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+          saga-state:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+          compensation-state:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: type of description requested.
+          task-state:
             type: string
             maximum: 1
             minimum: 1
             description: type of description requested.
             enum:
-              - Info
-              - Stop
-              - Resume
-              - Abort
+              - Running
+              - Finished
+              - Aborted
       traits:
-        - $ref: "#/components/messageTraits/common"    
+        - $ref: "#/components/messageTraits/common"
    
   messageTraits:
     common:
