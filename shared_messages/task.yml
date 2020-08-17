@@ -2,7 +2,7 @@ components:
   messages:
     SECTaskRequestByID:
       payload:
-        type: object
+        type: array
         properties:
           request:
             type: string
