@@ -47,7 +47,7 @@ components:
             description: package area connection
 
       traits:
-        - $ref: "#/componets/messageTraits/common"
+        - $ref: "#/components/messageTraits/common"
         
     HealthValidation:
       payload:
@@ -78,7 +78,7 @@ components:
             description: package area connection    
             
       traits:
-        - $ref: "#/componets/messageTraits/common"
+        - $ref: "#/components/messageTraits/common"
       
     HealthConfiguration:  
       payload:
@@ -121,7 +121,7 @@ components:
             description: package area connection  
       
       traits:
-        - $ref: "#/componets/messageTraits/common"
+        - $ref: "#/components/messageTraits/common"
 
     HealthDatabase:
       payload:
@@ -182,7 +182,7 @@ components:
             description: Virtuoso connection
       
       traits:
-        - $ref: "#/componets/messageTraits/common"
+        - $ref: "#/components/messageTraits/common"
         
         
   messageTraits:
