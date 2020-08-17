@@ -1,13 +1,18 @@
-asyncapi: 2.0.0
-info:
-  title: HealthCheck API
-  version: '0.1'
-  description: Definition of the Health Check API
-
-channels:
-  HealthLockingChannel: 
-   subscribe:
-     message:
+components:
+  messages:
+    HealthCheck:
+      payload:
+        type: object
+        properties:
+          msg:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: check request
+            enum:
+              - HealthCheck
+              
+    HealthLocking:
       payload:
         type: object
         properties:
@@ -42,12 +47,9 @@ channels:
             description: package area connection
 
       traits:
-        - $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/health/shared_components.yml#/components/messageTraits/common"
-
-
-  HealthValidationChannel: 
-   subscribe:
-     message:
+        - $ref: "#/messageTraits/common"
+        
+    HealthValidation:
       payload:
         type: object
         properties:
@@ -73,14 +75,12 @@ channels:
             type: boolean
             maximum: 1
             minimum: 1
-            description: package area connection
-
+            description: package area connection    
+            
       traits:
-        - $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/health/shared_components.yml#/components/messageTraits/common"
-        
-  HealthConfigurationChannel: 
-   subscribe:
-     message:
+        - $ref: "#/messageTraits/common"
+      
+    HealthConfiguration:  
       payload:
         type: object
         properties:
@@ -108,72 +108,22 @@ channels:
             minimum: 1
             description: shared area connection
  
-              
           ConfigurationConnectionOK:
             type: boolean
             maximum: 1
             minimum: 1
-            description: configurations connection
+            description: configurations connection     
+              
+          PackageAreaConnectionOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: package area connection  
       
-              
-          PackageAreaConnectionOK:
-            type: boolean
-            maximum: 1
-            minimum: 1
-            description: package area connection
-
       traits:
-        - $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/health/shared_components.yml#/components/messageTraits/common"
-        
-  HealthIndexationChannel: 
-   subscribe:
-     message:
-      payload:
-        type: object
-        properties:
-          SnapshotIndexationLastElapsed:
-            type: integer
-            format: milliseconds
-            maximum: 1
-            description: elapsed time for the last execution
+        - $ref: "#/messageTraits/common"
 
-          DirectIndexationLastElapsed:
-            type: integer
-            format: milliseconds
-            maximum: 1
-            description: elapsed time for the last execution
-            
-          NeighborIndexationLastElapsed:
-            type: integer
-            format: milliseconds
-            maximum: 1
-            description: elapsed time for the last execution
-
-          SharedAreaConnectionOK:
-            type: boolean
-            maximum: 1
-            minimum: 1
-            description: shared area connection
-              
-          RDBMSConnectionOK:
-            type: boolean
-            maximum: 1
-            minimum: 1
-            description: RDBMS connection   
-              
-          PackageAreaConnectionOK:
-            type: boolean
-            maximum: 1
-            minimum: 1
-            description: package area connection
-
-      traits:
-        - $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/health/shared_components.yml#/components/messageTraits/common"
-        
-        
-  HealthDatabaseChannel: 
-   subscribe:
-     message:
+    HealthDatabase:
       payload:
         type: object
         properties:
@@ -230,6 +180,35 @@ channels:
             maximum: 1
             minimum: 1
             description: Virtuoso connection
- 
+      
       traits:
-        - $ref: "https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/health/shared_components.yml#/components/messageTraits/common"
+        - $ref: "#/messageTraits/common"
+        
+        
+  messageTraits:
+    common:
+      headers:
+        type: object
+        properties:
+          MachineID:
+            description: Machine-ID
+            type: string
+            maximum: 1
+            minimum: 1
+          MainMemoryUsage:
+            description: main memory usage
+            type: integer
+            format: megabytes
+            maximum: 1
+            minimum: 1
+          SecondaryMemoryUsage:
+            description: secondary memory usage
+            type: integer
+            format: megabytes
+            maximum: 1
+            minimum: 1
+          HealthOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: health status
