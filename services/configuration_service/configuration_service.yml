@@ -1,0 +1,21 @@
+asyncapi: 2.0.0
+info:
+  title: Configuration Service API
+  version: '0.2'
+  description: Definition of the Configuration Service API
+
+channels:
+  ConfigurationSaga:
+    publish:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/ingestion.yml#/components/messages/ConfigsBegin'
+    subscribe:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/ingestion.yml#/components/messages/ConfigsEnd'
+  ConfigurationHealth:
+    publish:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/health.yml#/components/messages/HealthCheck'
+    subscribe:
+      message:
+        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/health.yml#/components/messages/HealthConfiguration'

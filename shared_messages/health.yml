@@ -123,6 +123,43 @@ components:
       traits:
         - $ref: "#/components/messageTraits/common"
 
+    HealthIndexation:  
+      payload:
+        type: object
+        properties:
+          DirectIndexationLastElapsed:
+            type: integer
+            format: milliseconds
+            maximum: 1
+            description: elapsed time for the last execution
+
+          NeighborIndexationLastElapsed:
+            type: integer
+            format: milliseconds
+            maximum: 1
+            description: elapsed time for the last execution
+
+          SharedAreaConnectionOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: shared area connection
+ 
+          RDBMSConnectionOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: RDBMS connection       
+              
+          PackageAreaConnectionOK:
+            type: boolean
+            maximum: 1
+            minimum: 1
+            description: package area connection  
+      
+      traits:
+        - $ref: "#/components/messageTraits/common"
+
     HealthDatabase:
       payload:
         type: object
