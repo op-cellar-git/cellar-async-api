@@ -37,46 +37,23 @@ components:
               - Abort
       traits:
         - $ref: "#/components/messageTraits/common"    
+    
     SECTaskResult:
       payload:
-        type: object
+        type: array
         properties:
-          trace-ID:
+          request:
             type: string
-            maximum: 1
-            minimum: 1
-            description: type of description requested.
-          activity-ID:
-            type: string
-            maximum: 1
-            minimum: 1
-            description: type of description requested.
-          cellar-ID:
-            type: string
-            maximum: 1
-            minimum: 1
-            description: type of description requested.
-          saga-state:
-            type: string
-            maximum: 1
-            minimum: 1
-            description: type of description requested.
-          compensation-state:
-            type: boolean
-            maximum: 1
-            minimum: 1
-            description: type of description requested.
-          task-state:
-            type: String
             maximum: 1
             minimum: 1
             description: type of description requested.
             enum:
-              - Running
-              - Finished
-              - Aborted
+              - Info
+              - Stop
+              - Resume
+              - Abort
       traits:
-        - $ref: "#/components/messageTraits/common"
+        - $ref: "#/components/messageTraits/common"    
    
   messageTraits:
     common:
