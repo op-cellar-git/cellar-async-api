@@ -1,26 +1,5 @@
 components:
   messages:
-    SECTaskRequestByID:
-      payload:
-        type: object
-        properties:
-          request:
-            type: string
-            maximum: 1
-            minimum: 1
-            description: type of description requested.
-            enum:
-              - Info
-              - Stop
-              - Resume
-              - Abort
-          id:
-            type: string
-            maximum: 1
-            minimum: 1
-            description: type of description requested.
-      traits:
-        - $ref: "#/components/messageTraits/common"
     SECTaskRequest:
       payload:
         type: object
@@ -35,8 +14,13 @@ components:
               - Stop
               - Resume
               - Abort
+          trace-ID:
+            type: string
+            format: uuid
+            maximum: 1
+            description: type of description requested.
       traits:
-        - $ref: "#/components/messageTraits/common"    
+        - $ref: "#/components/messageTraits/common"
     
     SECTaskResult:
       payload:
@@ -44,15 +28,17 @@ components:
         properties:
           trace-ID:
             type: string
+            format: uuid
             maximum: 1
             minimum: 1
             description: type of description requested.
           activity-ID:
             type: string
+            format: uuid
             maximum: 1
             minimum: 1
             description: type of description requested.
-          cellar-ID:
+          resource-ID:
             type: string
             maximum: 1
             minimum: 1
@@ -67,6 +53,11 @@ components:
             maximum: 1
             minimum: 1
             description: type of description requested.
+          package-name:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.            
           task-state:
             type: string
             maximum: 1
@@ -74,7 +65,7 @@ components:
             description: type of description requested.
             enum:
               - Running
-              - Finished
+              - Stopped
               - Aborted
       traits:
         - $ref: "#/components/messageTraits/common"
