@@ -40,13 +40,6 @@ channels:
     publish:
       message:
         $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/health.yml#/components/messages/HealthIndexation'
-  SECTaskRequestByID:
-    subscribe:
-      message:
-        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/task.yml#/components/messages/SECTaskRequestByID'
-    publish:
-      message:
-        $ref: 'https://raw.githubusercontent.com/op-cellar-git/cellar-async-api/master/shared_messages/task.yml#/components/messages/SECTaskResult'
   SECTaskRequest:
     subscribe:
       message:
