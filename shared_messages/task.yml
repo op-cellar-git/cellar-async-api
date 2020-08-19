@@ -57,7 +57,24 @@ components:
             type: string
             maximum: 1
             minimum: 1
-            description: type of description requested.            
+            description: type of description requested.     
+          parameters:
+            type: string
+            maximum: 1
+            minimum: 1
+            description: type of description requested.   
+          timestamp-saga:
+            type: string
+            format: date-time
+            maximum: 1
+            minimum: 1
+            description: type of description requested.  
+          timestamp-transaction:
+            type: string
+            format: date-time
+            maximum: 1
+            minimum: 1
+            description: type of description requested.  
           task-state:
             type: string
             maximum: 1
@@ -66,7 +83,6 @@ components:
             enum:
               - Running
               - Stopped
-              - Aborted
       traits:
         - $ref: "#/components/messageTraits/common"
    
